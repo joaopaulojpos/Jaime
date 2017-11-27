@@ -16,6 +16,7 @@ public class Estabelecimento {
     public String horarioAbre;
     public String horarioFecha;
     public int nota;
+    public int totalVotos;
 
     //N sei como é a localização, vou chutar que é latitude e longitude por enquanto e que são Long
     public Long latitude;

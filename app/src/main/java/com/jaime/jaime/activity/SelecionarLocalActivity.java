@@ -11,6 +11,7 @@ import com.jaime.jaime.R;
 import com.jaime.jaime.adapter.EstabelecimentoAdapter;
 import com.jaime.jaime.domain.Estabelecimento;
 import com.jaime.jaime.enums.EstabelecimentosEnum;
+import com.jaime.jaime.util.AlimentarCampos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +31,13 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecionar_local);
 
-
+        pegarReferencias();
         estabelecimentos = new ArrayList<Estabelecimento>();
-        alimentarEstabelecimentos();
+        estabelecimentos = alimentarEstabelecimentos();
         adapter = new EstabelecimentoAdapter(this, estabelecimentos);
+
         listView.setAdapter(adapter);
+
         //Se tiver vazio mostra um ícone do Android
         listView.setEmptyView(findViewById(android.R.id.empty));
 
@@ -51,19 +54,27 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
     }
 
-    private void alimentarEstabelecimentos() {
-        Estabelecimento e1 = new Estabelecimento();
-        e1.nome = "Teatro de Santa Isabel";
-        e1.descricao = "O Teatro de Santa Isabel é um teatro localizado na cidade brasileira do Recife, capital do estado de Pernambuco. É um raro exemplo de genuína arquitetura neoclássica da primeira metade do século XIX brasileiro.";
-        e1.isPontoTuristico = true;
-        e1.isLocalPublico = false;
-        e1.endereco = "Praça da República, s/n - Santo Antônio, Recife - PE, 50010-040";
-        e1.telefone = "(81) 3355-3323";
-        e1.tipoEstabelecimento = EstabelecimentosEnum.TEATRO.toString();
-        e1.imagem = 0;
-
-        estabelecimentos.add(e1);
+    private void pegarReferencias() {
+        listView = (ListView) findViewById(R.id.lista);
     }
+
+
+    /**
+     * Settando na mão por enquanto
+     *
+     * @return Uma Lista com todos estabelecimentos
+     */
+    private List<Estabelecimento> alimentarEstabelecimentos() {
+        AlimentarCampos alimentarCampos = new AlimentarCampos();
+
+        List<Estabelecimento> lisst = new ArrayList<Estabelecimento>();
+
+        lisst.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada());
+
+        return lisst;
+    }
+
+
 
 
 }
