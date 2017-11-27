@@ -1,0 +1,5 @@
+package com.jaime.jaime.enums;
+
+public enum EstabelecimentosEnum {
+    HOTEL, RESTAURANTE, IGREJA, PRAIA, ESTACAODEMETRO, PONTODEONIBUS, TEATRO, ACADEMIA, PADARIA, SUPERMERCADO, SHOPPING
+}

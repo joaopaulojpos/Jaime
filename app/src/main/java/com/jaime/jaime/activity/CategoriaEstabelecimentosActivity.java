@@ -1,15 +1,19 @@
-package com.jaime.jaime;
+package com.jaime.jaime.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.jaime.jaime.R;
+
 public class CategoriaEstabelecimentosActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnRestaurante;
     private Button btnBar;
     private Button btnTeatro;
+    private Intent intent;
 
     //ATRIBUTOS
 
@@ -29,7 +33,8 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnRestaurante:
-                Toast.makeText(this, "Falta criar tela de Listagem de Restaurantes", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.btnBar:

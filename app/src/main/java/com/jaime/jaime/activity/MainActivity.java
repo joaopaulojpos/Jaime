@@ -1,11 +1,12 @@
-package com.jaime.jaime;
+package com.jaime.jaime.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.jaime.jaime.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnProximaPagina;

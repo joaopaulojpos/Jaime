@@ -1,0 +1,5 @@
+<resources>
+    <array name="imagens">
+        <item>@drawable/imagem_teste</item>
+    </array>
+</resources>
