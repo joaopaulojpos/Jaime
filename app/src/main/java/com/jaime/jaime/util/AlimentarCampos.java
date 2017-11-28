@@ -74,6 +74,8 @@ public class AlimentarCampos {
         e1.imagem = 1;
         e1.nota = 4;
         e1.totalVotos = 248;
+        e1.horarioAbre = "08:00";
+        e1.horarioFecha = "22:00";
 
         Estabelecimento e2 = new Estabelecimento();
         e2.nome = "Teatro RioMar Recife";
@@ -88,6 +90,8 @@ public class AlimentarCampos {
         e2.imagem = 2;
         e2.nota = 2;
         e2.totalVotos = 105;
+        e2.horarioAbre = "10:00";
+        e2.horarioFecha = "20:00";
 
         estabelecimentos.add(e1);
         estabelecimentos.add(e2);

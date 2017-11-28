@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="5dp"
     tools:context="com.jaime.jaime.activity.EstabelecimentoInfoActivity">
 
     <RelativeLayout
@@ -18,7 +19,7 @@
             android:layout_centerHorizontal="true"
             android:padding="10dp"
             android:text="@null"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:textStyle="bold" />
 
         <ImageView
@@ -30,133 +31,163 @@
             android:src="@null" />
     </RelativeLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/rl3"
+    <ScrollView
+        android:id="@+id/sv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl2"
-        android:layout_marginTop="10dp">
+        android:layout_below="@id/rl2">
 
-        <TextView
-            android:id="@+id/tvDescricao2"
+        <RelativeLayout
+            android:id="@+id/rl3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@null" />
+            android:layout_marginTop="10dp">
 
-        <TextView
-            android:id="@+id/tvEndereco"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvDescricao2"
-            android:text="Endereço: "
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvDescricao2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@null"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/tvEndereco2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvDescricao2"
-            android:layout_toRightOf="@id/tvEndereco"
-            android:text="@null" />
+            <TextView
+                android:id="@+id/tvEndereco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDescricao2"
+                android:layout_marginTop="10dp"
+                android:text="Endereço: "
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvHorario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvEndereco2"
-            android:text="Horario: "
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvEndereco2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDescricao2"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tvEndereco"
+                android:text="@null"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/tvHorario2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvEndereco2"
-            android:layout_toRightOf="@id/tvHorario"
-            android:text="@null" />
+            <TextView
+                android:id="@+id/tvHorario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEndereco2"
+                android:layout_marginTop="10dp"
+                android:text="Horario: "
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvTelefone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvHorario"
-            android:text="Telefone:"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvHorario2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvEndereco2"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tvHorario"
+                android:text="@null"
+                android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/tvTelefone2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tvHorario"
-            android:layout_toRightOf="@+id/tvTelefone"
-            android:text="@null" />
+            <TextView
+                android:id="@+id/tvTelefone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvHorario"
+                android:layout_marginTop="10dp"
+                android:text="Telefone:"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvSite"
-            android:layout_below="@id/tvTelefone"
-            android:text="Site:"
-            android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvTelefone2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHorario"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tvTelefone"
+                android:text="@null"
+                android:textSize="16dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvSite2"
-            android:layout_below="@+id/tvTelefone"
-            android:layout_toRightOf="@+id/tvSite"
-            android:text="@null"/>
+            <TextView
+                android:id="@+id/tvSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvTelefone"
+                android:layout_marginTop="10dp"
+                android:text="Site:"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Avalie:"
-            android:id="@+id/tvAvalie"
-            android:layout_below="@id/tvSite"
-            android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvSite2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTelefone"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/tvSite"
+                android:text="@null"
+                android:textSize="16dp" />
 
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ratingBar2"
-            android:layout_below="@id/tvSite"
-            android:layout_toRightOf="@id/tvAvalie"
-            style="?android:attr/ratingBarStyleSmall"
-            />
+            <TextView
+                android:id="@+id/tvAvalie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSite"
+                android:layout_marginTop="10dp"
+                android:paddingTop="15dp"
+                android:text="Avalie:"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Adicionar aos Favoritos:"
-            android:layout_below="@+id/tvAvalie"
-            android:id="@+id/tvAddFav"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"/>
+            <RatingBar
+                android:id="@+id/ratingBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvSite"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tvAvalie" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cbFav"
-            android:layout_below="@+id/tvAvalie"
-            android:layout_toRightOf="@id/tvAddFav"/>
+            <TextView
+                android:id="@+id/tvAddFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ratingBar2"
+                android:layout_marginTop="10dp"
+                android:text="Adicionar aos Favoritos:"
+                android:textSize="16dp"
+                android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:id="@+id/imgLogoMaps"
-            android:layout_below="@id/tvAddFav"
-            android:src="@drawable/imagem_teste"/>
+            <CheckBox
+                android:id="@+id/cbFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ratingBar2"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/tvAddFav" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvMaps"
-            android:text="Ver no Mapa"
-            android:layout_below="@id/tvAddFav"
-            android:layout_toRightOf="@id/imgLogoMaps"
-            android:layout_marginTop="5dp"/>
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/imgLogoMaps"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/tvAddFav"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/google_maps" />
 
+            <TextView
+                android:id="@+id/tvMaps"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@id/tvAddFav"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/imgLogoMaps"
+                android:text="Ver no Mapa"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
 
 </RelativeLayout>
