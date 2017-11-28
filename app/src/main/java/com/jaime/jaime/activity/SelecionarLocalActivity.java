@@ -3,15 +3,14 @@ package com.jaime.jaime.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.jaime.jaime.R;
 import com.jaime.jaime.adapter.EstabelecimentoAdapter;
 import com.jaime.jaime.domain.Estabelecimento;
-import com.jaime.jaime.enums.EstabelecimentosEnum;
 import com.jaime.jaime.util.AlimentarCampos;
 
 import java.util.ArrayList;
@@ -21,9 +20,12 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
     //ATRIBUTOS
 
+    private Bundle extrasPaginaAnterior;
+    private Bundle extrasProximaPagina;
     List<Estabelecimento> estabelecimentos;
     EstabelecimentoAdapter adapter;
     ListView listView;
+    private String Categoria;
 
     //METODOS
 
@@ -33,6 +35,8 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selecionar_local);
 
         pegarReferencias();
+        pegarExtras();
+
         estabelecimentos = new ArrayList<Estabelecimento>();
         estabelecimentos = alimentarEstabelecimentos();
         adapter = new EstabelecimentoAdapter(this, estabelecimentos);
@@ -48,8 +52,10 @@ public class SelecionarLocalActivity extends AppCompatActivity {
                                     int position, long id) {
                 Estabelecimento estabelecimento = (Estabelecimento) adapterView.getItemAtPosition(position);
                 if (estabelecimento != null) {
-                    Intent intent = new Intent(SelecionarLocalActivity.this, EstabelecimentoInfoActivity.class);
-                    startActivity(intent);
+
+                    Intent intentProximaPagina = new Intent(SelecionarLocalActivity.this, EstabelecimentoInfoActivity.class);
+                    intentProximaPagina.putExtra("Estabelecimento", estabelecimento);
+                    startActivity(intentProximaPagina);
                 }
             }
         });
@@ -60,6 +66,12 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.lista);
     }
 
+
+    private void pegarExtras() {
+        extrasPaginaAnterior = getIntent().getExtras();
+        Categoria = extrasPaginaAnterior.getString("Categoria");
+
+    }
 
     /**
      * Settando na mão por enquanto
@@ -75,8 +87,6 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
         return lisst;
     }
-
-
 
 
 }

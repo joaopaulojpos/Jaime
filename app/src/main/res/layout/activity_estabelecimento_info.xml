@@ -17,11 +17,12 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:padding="10dp"
-            android:text="Teatro Santa Isabel"
+            android:text="@null"
             android:textSize="24dp"
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/img1"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:layout_below="@id/tvTitulo1"
@@ -41,7 +42,7 @@
             android:id="@+id/tvDescricao2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Casa tombada da época do império em estilo neoclássico exibe espetáculos teatrais e musicais de grande porte." />
+            android:text="@null" />
 
         <TextView
             android:id="@+id/tvEndereco"
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvDescricao2"
             android:layout_toRightOf="@id/tvEndereco"
-            android:text="Praça da República, s/n - Santo Antônio, Recife - PE, 50010-040" />
+            android:text="@null" />
 
         <TextView
             android:id="@+id/tvHorario"
@@ -73,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEndereco2"
             android:layout_toRightOf="@id/tvHorario"
-            android:text="Não sei" />
+            android:text="@null" />
 
         <TextView
             android:id="@+id/tvTelefone"
@@ -89,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvHorario"
             android:layout_toRightOf="@+id/tvTelefone"
-            android:text="(81) 3355-3323" />
+            android:text="@null" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -105,7 +106,7 @@
             android:id="@+id/tvSite2"
             android:layout_below="@+id/tvTelefone"
             android:layout_toRightOf="@+id/tvSite"
-            android:text="teatrosantaisabel.com.br"/>
+            android:text="@null"/>
 
         <TextView
             android:layout_width="wrap_content"

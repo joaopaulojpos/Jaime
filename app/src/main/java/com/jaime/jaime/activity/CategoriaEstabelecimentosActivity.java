@@ -34,16 +34,21 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnRestaurante:
-                Intent intent = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
-                startActivity(intent);
+                Intent intentRestaurante = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
+                intentRestaurante.putExtra("Categoria", "Restaurante");
+                startActivity(intentRestaurante);
                 break;
 
             case R.id.btnBar:
-                Toast.makeText(this, "Falta criar tela de Listagem de Bares", Toast.LENGTH_SHORT).show();
+                Intent intentBar = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
+                intentBar.putExtra("Categoria", "Bar");
+                startActivity(intentBar);
                 break;
 
             case R.id.btnTeatro:
-                Toast.makeText(this, "Falta criar tela de Listagem de Teatros", Toast.LENGTH_SHORT).show();
+                Intent intentTeatro = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
+                intentTeatro.putExtra("Categoria", "Teatro");
+                startActivity(intentTeatro);
                 break;
         }
     }

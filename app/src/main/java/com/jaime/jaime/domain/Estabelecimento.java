@@ -1,8 +1,13 @@
 package com.jaime.jaime.domain;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.RatingBar;
+import android.widget.Toast;
 
-public class Estabelecimento {
+import java.io.Serializable;
+
+public class Estabelecimento implements Serializable{
 
     //Deixando tudo public por enquanto já q provavelmente vai ter campos deletados ou novos nessa classe,
     // ai pra ficar refazendo get set direto perde tempo
@@ -27,6 +32,19 @@ public class Estabelecimento {
     //Opcionais
     public boolean isPontoTuristico;
     public boolean isLocalPublico;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

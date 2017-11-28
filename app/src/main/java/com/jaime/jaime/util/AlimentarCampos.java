@@ -30,6 +30,7 @@ public class AlimentarCampos {
         e1.isLocalPublico = false;
         e1.endereco = "Praça da República, s/n - Santo Antônio, Recife - PE, 50010-040";
         e1.telefone = "(81) 3355-3323";
+        e1.site = "www.teatrosantaisabel.com.br";
         e1.tipoEstabelecimento = EstabelecimentosEnum.TEATRO.toString();
         e1.imagem = 0;
         e1.nota = 4;
@@ -43,6 +44,7 @@ public class AlimentarCampos {
         e2.isLocalPublico = false;
         e2.endereco = "Av. República do Líbano, 251 - Pina, Recife - PE, 51110-160";
         e2.telefone = "4003-1212";
+        e1.site = "www.teatroriomarrecife.com.br";
         e2.tipoEstabelecimento = EstabelecimentosEnum.TEATRO.toString();
         e2.imagem = 0;
         e2.nota = 2;

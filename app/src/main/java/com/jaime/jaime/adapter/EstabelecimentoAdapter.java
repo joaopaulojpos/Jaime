@@ -73,7 +73,6 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         ratingBar.setMax(5);
         ratingBar.setRating(estabelecimento.nota);
         tvDescricao.setText(estabelecimento.descricao);
-        Log.i("TotalVotos", estabelecimento.totalVotos + "");
         tvTotalVotos.setText("(" + estabelecimento.totalVotos + ")");
 
 
