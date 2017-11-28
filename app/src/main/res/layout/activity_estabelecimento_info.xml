@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jaime.jaime.activity.EstabelecimentoInfoActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTitulo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="Teatro Santa Isabel"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_below="@id/tvTitulo1"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/imagem_teste" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl2"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tvDescricao2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Casa tombada da época do império em estilo neoclássico exibe espetáculos teatrais e musicais de grande porte." />
+
+        <TextView
+            android:id="@+id/tvEndereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescricao2"
+            android:text="Endereço: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEndereco2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDescricao2"
+            android:layout_toRightOf="@id/tvEndereco"
+            android:text="Praça da República, s/n - Santo Antônio, Recife - PE, 50010-040" />
+
+        <TextView
+            android:id="@+id/tvHorario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEndereco2"
+            android:text="Horario: "
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvHorario2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEndereco2"
+            android:layout_toRightOf="@id/tvHorario"
+            android:text="Não sei" />
+
+        <TextView
+            android:id="@+id/tvTelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHorario"
+            android:text="Telefone:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTelefone2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHorario"
+            android:layout_toRightOf="@+id/tvTelefone"
+            android:text="(81) 3355-3323" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSite"
+            android:layout_below="@id/tvTelefone"
+            android:text="Site:"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvSite2"
+            android:layout_below="@+id/tvTelefone"
+            android:layout_toRightOf="@+id/tvSite"
+            android:text="teatrosantaisabel.com.br"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Avalie:"
+            android:id="@+id/tvAvalie"
+            android:layout_below="@id/tvSite"
+            android:textStyle="bold"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingBar2"
+            android:layout_below="@id/tvSite"
+            android:layout_toRightOf="@id/tvAvalie"
+            style="?android:attr/ratingBarStyleSmall"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicionar aos Favoritos:"
+            android:layout_below="@+id/tvAvalie"
+            android:id="@+id/tvAddFav"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbFav"
+            android:layout_below="@+id/tvAvalie"
+            android:layout_toRightOf="@id/tvAddFav"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/imgLogoMaps"
+            android:layout_below="@id/tvAddFav"
+            android:src="@drawable/imagem_teste"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMaps"
+            android:text="Ver no Mapa"
+            android:layout_below="@id/tvAddFav"
+            android:layout_toRightOf="@id/imgLogoMaps"
+            android:layout_marginTop="5dp"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>

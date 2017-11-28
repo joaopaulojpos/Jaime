@@ -1,5 +1,6 @@
 package com.jaime.jaime.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,7 +48,8 @@ public class SelecionarLocalActivity extends AppCompatActivity {
                                     int position, long id) {
                 Estabelecimento estabelecimento = (Estabelecimento) adapterView.getItemAtPosition(position);
                 if (estabelecimento != null) {
-                    Toast.makeText(SelecionarLocalActivity.this, "Estabelecimento: " + estabelecimento.nome + " selecionado.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SelecionarLocalActivity.this, EstabelecimentoInfoActivity.class);
+                    startActivity(intent);
                 }
             }
         });

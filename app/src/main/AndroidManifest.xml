@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.CategoriaEstabelecimentosActivity" />
-        <activity android:name=".activity.SelecionarLocalActivity"></activity>
+        <activity android:name=".activity.SelecionarLocalActivity" />
+        <activity android:name=".activity.EstabelecimentoInfoActivity"></activity>
     </application>
 
 </manifest>
