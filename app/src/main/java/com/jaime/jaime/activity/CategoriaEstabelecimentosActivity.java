@@ -15,7 +15,7 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
     private Button btnTeatro;
     private Intent intent;
 
-    //ATRIBUTOS
+    //ATRIBUTOS Teste commit
 
 
     //METODOS
