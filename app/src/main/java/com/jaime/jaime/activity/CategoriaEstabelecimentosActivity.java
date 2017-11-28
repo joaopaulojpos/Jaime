@@ -27,6 +27,7 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
 
         pegarReferencias();
         listenarBotoes();
+
     }
 
     @Override
