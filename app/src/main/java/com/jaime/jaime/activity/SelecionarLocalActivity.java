@@ -25,7 +25,7 @@ public class SelecionarLocalActivity extends AppCompatActivity {
     List<Estabelecimento> estabelecimentos;
     EstabelecimentoAdapter adapter;
     ListView listView;
-    private String Categoria;
+    private String categoria;
 
     //METODOS
 
@@ -38,7 +38,7 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         pegarExtras();
 
         estabelecimentos = new ArrayList<Estabelecimento>();
-        estabelecimentos = alimentarEstabelecimentos();
+        estabelecimentos = alimentarEstabelecimentos(categoria);
         adapter = new EstabelecimentoAdapter(this, estabelecimentos);
 
         listView.setAdapter(adapter);
@@ -69,7 +69,7 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
     private void pegarExtras() {
         extrasPaginaAnterior = getIntent().getExtras();
-        Categoria = extrasPaginaAnterior.getString("Categoria");
+        categoria = extrasPaginaAnterior.getString("Categoria");
 
     }
 
@@ -78,12 +78,12 @@ public class SelecionarLocalActivity extends AppCompatActivity {
      *
      * @return Uma Lista com todos estabelecimentos
      */
-    private List<Estabelecimento> alimentarEstabelecimentos() {
+    private List<Estabelecimento> alimentarEstabelecimentos(String categoria) {
         AlimentarCampos alimentarCampos = new AlimentarCampos();
 
         List<Estabelecimento> lisst = new ArrayList<Estabelecimento>();
 
-        lisst.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada());
+        lisst.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada(categoria));
 
         return lisst;
     }

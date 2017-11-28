@@ -14,14 +14,53 @@ import java.util.List;
 public class AlimentarCampos {
 
     TextoUtil textoUtil;
+    List<Estabelecimento> estabelecimentos;
 
-    public AlimentarCampos(){
+    public AlimentarCampos() {
         textoUtil = new TextoUtil();
     }
 
-    public List<Estabelecimento> pegarListaEstabelecimentosAlimentada() {
-        List<Estabelecimento> estabelecimentos = new ArrayList<Estabelecimento>();
+    public List<Estabelecimento> pegarListaEstabelecimentosAlimentada(String categoria) {
+        estabelecimentos = new ArrayList<Estabelecimento>();
+        switch (categoria.toLowerCase()) {
+            case "teatro":
+                alimentarTeatros();
+                break;
+            case "restaurante":
 
+                break;
+            case "hotel":
+
+                break;
+            case "igreja":
+
+                break;
+            case "praia":
+
+                break;
+            case "estacaodemetro":
+
+                break;
+            case "pontodeonibus":
+
+                break;
+            case "academia":
+
+                break;
+            case "padaria":
+
+                break;
+            case "supermercado":
+
+                break;
+            case "shopping":
+
+                break;
+        }
+        return estabelecimentos;
+    }
+
+    private void alimentarTeatros() {
         Estabelecimento e1 = new Estabelecimento();
         e1.nome = "Teatro de Santa Isabel";
         String wikipediaTexto = "O Teatro de Santa Isabel é um teatro localizado na cidade brasileira do Recife, capital do estado de Pernambuco. É um raro exemplo de genuína arquitetura neoclássica da primeira metade do século XIX brasileiro.";
@@ -32,7 +71,7 @@ public class AlimentarCampos {
         e1.telefone = "(81) 3355-3323";
         e1.site = "www.teatrosantaisabel.com.br";
         e1.tipoEstabelecimento = EstabelecimentosEnum.TEATRO.toString();
-        e1.imagem = 0;
+        e1.imagem = 1;
         e1.nota = 4;
         e1.totalVotos = 248;
 
@@ -46,13 +85,11 @@ public class AlimentarCampos {
         e2.telefone = "4003-1212";
         e1.site = "www.teatroriomarrecife.com.br";
         e2.tipoEstabelecimento = EstabelecimentosEnum.TEATRO.toString();
-        e2.imagem = 0;
+        e2.imagem = 2;
         e2.nota = 2;
         e2.totalVotos = 105;
 
         estabelecimentos.add(e1);
         estabelecimentos.add(e2);
-
-        return estabelecimentos;
     }
 }

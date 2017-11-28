@@ -1,5 +1,7 @@
 <resources>
     <array name="imagens">
         <item>@drawable/imagem_teste</item>
+        <item>@drawable/teatro_santa_isabel</item>
+        <item>@drawable/teatro_rio_mar</item>
     </array>
 </resources>

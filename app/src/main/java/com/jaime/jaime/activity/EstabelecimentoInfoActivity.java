@@ -1,6 +1,9 @@
 package com.jaime.jaime.activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CheckBox;
@@ -46,7 +49,12 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
         tvHorario.setText(estabelecimento.horarioAbre + " até " + estabelecimento.horarioFecha);
         tvSite.setText(estabelecimento.site);
         tvTelefone.setText(estabelecimento.telefone);
-//        imagem = estabelecimento.imagem;
+
+        //Imagem
+        Resources res = this.getResources();
+        TypedArray imagens = res.obtainTypedArray(R.array.imagens);
+        imagem.setImageDrawable(imagens.getDrawable(estabelecimento.imagem));
+
         ratingBarAvalie.setEnabled(true);
     }
 

@@ -27,7 +27,7 @@
             android:layout_height="200dp"
             android:layout_below="@id/tvTitulo1"
             android:layout_marginTop="10dp"
-            android:src="@drawable/imagem_teste" />
+            android:src="@null" />
     </RelativeLayout>
 
 

@@ -32,25 +32,19 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
 
     @Override
     public void onClick(View v) {
+        intent = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
         switch (v.getId()) {
             case R.id.btnRestaurante:
-                Intent intentRestaurante = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
-                intentRestaurante.putExtra("Categoria", "Restaurante");
-                startActivity(intentRestaurante);
+                intent.putExtra("Categoria", "Restaurante");
                 break;
-
             case R.id.btnBar:
-                Intent intentBar = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
-                intentBar.putExtra("Categoria", "Bar");
-                startActivity(intentBar);
+                intent.putExtra("Categoria", "Bar");
                 break;
-
             case R.id.btnTeatro:
-                Intent intentTeatro = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
-                intentTeatro.putExtra("Categoria", "Teatro");
-                startActivity(intentTeatro);
+                intent.putExtra("Categoria", "Teatro");
                 break;
         }
+        startActivity(intent);
     }
 
     public void pegarReferencias() {
