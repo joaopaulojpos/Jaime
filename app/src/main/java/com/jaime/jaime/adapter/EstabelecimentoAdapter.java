@@ -66,16 +66,14 @@ public class EstabelecimentoAdapter extends BaseAdapter {
 
         //Passo 3
         Resources res = context.getResources();
-        tvNome.setText(estabelecimento.nome);
+        tvNome.setText(estabelecimento.getNome());
         TypedArray imagens = res.obtainTypedArray(R.array.imagens);
         imgImagem.setImageDrawable(
-                imagens.getDrawable(estabelecimento.imagem));
+                imagens.getDrawable(estabelecimento.getImagem()));
         ratingBar.setMax(5);
-        ratingBar.setRating(estabelecimento.nota);
-        tvDescricao.setText(estabelecimento.descricao);
-        tvTotalVotos.setText("(" + estabelecimento.totalVotos + ")");
-
-
+        ratingBar.setRating(estabelecimento.getNota());
+        tvDescricao.setText(estabelecimento.getDescricao());
+        tvTotalVotos.setText("(" + estabelecimento.getTotalVotos() + ")");
 
         // Passo 4
         return convertView;

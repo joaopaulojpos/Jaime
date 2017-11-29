@@ -43,17 +43,17 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
     }
 
     private void setarCamposDaTela() {
-        tvTitulo.setText(estabelecimento.nome);
-        tvDescricao.setText(estabelecimento.descricao);
-        tvEndereco.setText(estabelecimento.endereco);
-        tvHorario.setText(estabelecimento.horarioAbre + " até " + estabelecimento.horarioFecha);
-        tvSite.setText(estabelecimento.site);
-        tvTelefone.setText(estabelecimento.telefone);
+        tvTitulo.setText(estabelecimento.getNome());
+        tvDescricao.setText(estabelecimento.getDescricao());
+        tvEndereco.setText(estabelecimento.getEndereco());
+        tvHorario.setText(estabelecimento.getHorarioAbre() + " até " + estabelecimento.getHorarioFecha());
+        tvSite.setText(estabelecimento.getSite());
+        tvTelefone.setText(estabelecimento.getTelefone());
 
         //Imagem
         Resources res = this.getResources();
         TypedArray imagens = res.obtainTypedArray(R.array.imagens);
-        imagem.setImageDrawable(imagens.getDrawable(estabelecimento.imagem));
+        imagem.setImageDrawable(imagens.getDrawable(estabelecimento.getImagem()));
 
         ratingBarAvalie.setEnabled(true);
     }
