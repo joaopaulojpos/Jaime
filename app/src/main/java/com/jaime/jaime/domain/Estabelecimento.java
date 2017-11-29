@@ -4,21 +4,21 @@ import java.io.Serializable;
 
 public class Estabelecimento implements Serializable{
 
-    private int id;
-    private String nome;
-    private String telefone;
-    private String site;
-    private String descricao;
-    private String endereco;
+    private int id;//
+    private String nome;//
+    private String telefone;//
+    private String site;//
+    private String descricao;//
+    private String endereco;//
     private String categoria;
-    private String horarioAbre;
-    private String horarioFecha;
-    private int nota;
-    private int totalVotos;
+    private String horarioAbre;//
+    private String horarioFecha;//
+    private int nota;//
+    private int totalVotos;//
     private Long latitude;
     private Long longitude;
-    private int imagem;
-    private boolean isLocalPublico;
+    private int imagem;//
+    private boolean isLocalPublico;//
 
     public Estabelecimento() {
     }

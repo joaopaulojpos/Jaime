@@ -1,9 +1,5 @@
 package com.jaime.jaime.util;
 
-/**
- * Created by leandro.cavalcanti on 27/11/2017.
- */
-
 public class TextoUtil {
 
     public String limitarTamanhoTexto(String texto) {
