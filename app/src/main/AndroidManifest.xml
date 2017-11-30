@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jaime.jaime">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +20,8 @@
         </activity>
         <activity android:name=".activity.CategoriaEstabelecimentosActivity" />
         <activity android:name=".activity.SelecionarLocalActivity" />
-        <activity android:name=".activity.EstabelecimentoInfoActivity"></activity>
+        <activity android:name=".activity.EstabelecimentoInfoActivity" />
+        <activity android:name=".apiclima.ClimaActivity"></activity>
     </application>
 
 </manifest>
