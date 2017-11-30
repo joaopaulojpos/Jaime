@@ -3,7 +3,6 @@ package com.jaime.jaime.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -81,12 +80,10 @@ public class SelecionarLocalActivity extends AppCompatActivity {
     private List<Estabelecimento> alimentarEstabelecimentos(String categoria) {
         AlimentarCampos alimentarCampos = new AlimentarCampos();
 
-        List<Estabelecimento> lisst = new ArrayList<Estabelecimento>();
+        List<Estabelecimento> lista = new ArrayList<Estabelecimento>();
 
-        lisst.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada(categoria));
+        lista.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada(categoria));
 
-        return lisst;
+        return lista;
     }
-
-
 }

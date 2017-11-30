@@ -1,5 +1,6 @@
 package com.jaime.jaime.util;
 
+import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
 import com.jaime.jaime.enums.EstabelecimentosEnum;
 
@@ -20,6 +21,7 @@ public class AlimentarCampos {
         switch (categoria.toLowerCase()) {
             case "teatro":
                 alimentarTeatros();
+//                alimentarTeatrosDAO();
                 break;
             case "restaurante":
 
@@ -53,6 +55,15 @@ public class AlimentarCampos {
                 break;
         }
         return estabelecimentos;
+    }
+
+
+    private void alimentarTeatrosDAO() {
+        EstabelecimentoDAO dao = new EstabelecimentoDAO(AddEstabelecimentoActivity.this);
+
+        alimentarEstabelecimento();
+        dao.salvar(estudante);
+        finish();
     }
 
     private void alimentarTeatros() {
@@ -89,4 +100,6 @@ public class AlimentarCampos {
         estabelecimentos.add(e1);
         estabelecimentos.add(e2);
     }
+
+
 }

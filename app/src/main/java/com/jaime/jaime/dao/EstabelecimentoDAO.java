@@ -37,7 +37,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         //pegar uma instância de SQLiteDatabe
         SQLiteDatabase db = getWritableDatabase();
         //insert
-        if (estabelecimento.getId() == null) {
+        if (estabelecimento.getId() == 0) {
             db.insert("estabelecimento", null, cv);
         } else {
             atualizar(estabelecimento);
