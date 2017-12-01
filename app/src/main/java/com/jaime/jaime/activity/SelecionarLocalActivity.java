@@ -3,6 +3,7 @@ package com.jaime.jaime.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -12,7 +13,6 @@ import com.jaime.jaime.adapter.EstabelecimentoAdapter;
 import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
 import com.jaime.jaime.util.AlimentarBanco;
-import com.jaime.jaime.util.AlimentarCampos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,31 +37,45 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
         pegarReferencias();
         pegarExtras();
+        Log.i("Leandro", "On Create da tela SelecionarLocalActivity.\nCategoria: " + categoria);
 
         estabelecimentos = new ArrayList<>();
         AlimentarBanco alimentarBanco = new AlimentarBanco();
 
-        estabelecimentos = listarEstabelecimentos();
-        if(estabelecimentos.isEmpty()){
+        //Pega do banco os Estabelecimentos da categoria escolhida
+        estabelecimentos = listarEstabelecimentos(categoria);
+
+        //se a lista estiver vazia quer dizer que o banco tá vazio, então...
+        if (estabelecimentos.isEmpty()) {
+            //Damos uma carga no banco por ex: Se o usuário quer listar os shoppings, esse método
+            //pegarListaEstabelecimentosAlimentada vai inserir no banco todos os shoppings
             alimentarBanco.pegarListaEstabelecimentosAlimentada(SelecionarLocalActivity.this, categoria);
-            estabelecimentos = listarEstabelecimentos();
+            //agora quando for pegar do banco não vai mais vir vazia
+            estabelecimentos = listarEstabelecimentos(categoria);
         }
         adapter = new EstabelecimentoAdapter(this, estabelecimentos);
 
         listView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged(); //acho q não precisa disso aqui
 
         //Se tiver vazio mostra um ícone do Android(não tá funcionando)
         listView.setEmptyView(findViewById(android.R.id.empty));
 
+        //Se o usuário clicar em algum item da lista...
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                //pega o estabelecimento selecionado
                 Estabelecimento estabelecimento = (Estabelecimento) adapterView.getItemAtPosition(position);
-                if (estabelecimento != null) {
 
+                //se não tiver nulo..
+                if (estabelecimento != null) {
+                    //prepara a intent pra próxima pagina
                     Intent intentProximaPagina = new Intent(SelecionarLocalActivity.this, EstabelecimentoInfoActivity.class);
+                    //coloca no Bundle da intent da próxima página o estabelecimento selecionado
+                    // pra quando tiver lá saber qual foi o stabelecimento que o usuário escolheu
                     intentProximaPagina.putExtra("Estabelecimento", estabelecimento);
+                    //cria a próxima página
                     startActivity(intentProximaPagina);
                 }
             }
@@ -76,23 +90,8 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
     private void pegarExtras() {
         extrasPaginaAnterior = getIntent().getExtras();
+        //pega a categoria que foi escolhida na página anterior
         categoria = extrasPaginaAnterior.getString("Categoria");
-
-    }
-
-    /**
-     * Settando na mão por enquanto
-     *
-     * @return Uma Lista com todos estabelecimentos
-     */
-    private List<Estabelecimento> alimentarEstabelecimentosOLD(String categoria) {
-        AlimentarCampos alimentarCampos = new AlimentarCampos();
-
-        List<Estabelecimento> lista = new ArrayList<Estabelecimento>();
-
-        lista.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada(categoria));
-
-        return lista;
     }
 
     /**
@@ -100,10 +99,10 @@ public class SelecionarLocalActivity extends AppCompatActivity {
      *
      * @return
      */
-    public List<Estabelecimento> listarEstabelecimentos() {
+    public List<Estabelecimento> listarEstabelecimentos(String categoria) {
         List<Estabelecimento> lista = new ArrayList<>();
         EstabelecimentoDAO dao = new EstabelecimentoDAO(SelecionarLocalActivity.this);
-        lista = (List<Estabelecimento>) dao.buscarEstabelecimentos();
+        lista = (List<Estabelecimento>) dao.listarEstabelecimentos(categoria);
         return lista;
     }
 }

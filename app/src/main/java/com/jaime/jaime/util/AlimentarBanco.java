@@ -64,7 +64,7 @@ public class AlimentarBanco {
         e1.setEndereco("R. Padre Carapuceiro, 777 - Boa Viagem, Recife - PE, 51020-900");
         e1.setTelefone("(81) 3464-6464");
         e1.setSite("www.shoppingrecife.com.br");
-        e1.setCategoria(EstabelecimentosEnum.TEATRO.toString());
+        e1.setCategoria(EstabelecimentosEnum.SHOPPING.toString());
         e1.setImagem(4);
         e1.setNota(5);
         e1.setTotalVotos(50);
@@ -81,7 +81,7 @@ public class AlimentarBanco {
         e2.setEndereco("R. do Giriquiti, 48 - Boa Vista, Recife - PE, 50070-010");
         e2.setTelefone("(81) 3423-5666");
         e2.setSite("www.shoppingboavista.com.br");
-        e2.setCategoria(EstabelecimentosEnum.TEATRO.toString());
+        e2.setCategoria(EstabelecimentosEnum.SHOPPING.toString());
         e2.setImagem(3);
         e2.setNota(4);
         e2.setTotalVotos(875);
@@ -90,8 +90,8 @@ public class AlimentarBanco {
         e2.setLatitude(545456L);
         e2.setLongitude(8488L);
 
-        dao.salvar(e1);
-        dao.salvar(e2);
+        dao.salvarEstabelecimento(e1);
+        dao.salvarEstabelecimento(e2);
     }
 
     public void cargaTeatros(Context context) {
@@ -131,7 +131,7 @@ public class AlimentarBanco {
         e2.setLatitude(45654L);
         e2.setLongitude(84849L);
 
-        dao.salvar(e1);
-        dao.salvar(e2);
+        dao.salvarEstabelecimento(e1);
+        dao.salvarEstabelecimento(e2);
     }
 }
