@@ -14,6 +14,10 @@ import java.util.List;
  * Created by Dell-PC on 29/11/2017.
  */
 
+/**
+ * Essa classe faz uma ponte entre os dados e o layout exibido.
+ */
+
 public class ClimaAdapter extends RecyclerView.Adapter<ClimaAdapter.ClimViewHolder> {
 
     private List<Clima> climaList;
@@ -44,7 +48,7 @@ public class ClimaAdapter extends RecyclerView.Adapter<ClimaAdapter.ClimViewHold
     public void onBindViewHolder(ClimViewHolder holder, int position) {
         Clima clima = climaList.get(position);
         holder.description.setText(clima.getDescription());
-        holder.condition.setText(clima.getCondition());
+        holder.condition.setText(clima.climaTypesToString());
     }
 
     @Override

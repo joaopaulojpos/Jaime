@@ -8,11 +8,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.jaime.jaime.R;
+import com.jaime.jaime.apiclima.Clima;
 
 public class CategoriaEstabelecimentosActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnRestaurante;
     private Button btnBar;
     private Button btnTeatro;
+    private Button btnClima;
     private Intent intent;
 
     //ATRIBUTOS Teste commit
@@ -51,11 +53,21 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         btnRestaurante = findViewById(R.id.btnRestaurante);
         btnBar = findViewById(R.id.btnBar);
         btnTeatro = findViewById(R.id.btnTeatro);
+        btnClima = findViewById(R.id.btnClima);
     }
 
     public void listenarBotoes() {
         btnRestaurante.setOnClickListener(this);
         btnBar.setOnClickListener(this);
         btnTeatro.setOnClickListener(this);
+    }
+
+    /*
+    Estou fazendo esse metodo aqui para chamar a activity de Clima.
+     */
+
+    public void acionarClima(View view){
+        Intent intent = new Intent(this, Clima.class);
+        startActivity(intent);
     }
 }
