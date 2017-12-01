@@ -9,7 +9,9 @@ import android.widget.ListView;
 
 import com.jaime.jaime.R;
 import com.jaime.jaime.adapter.EstabelecimentoAdapter;
+import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
+import com.jaime.jaime.util.AlimentarBanco;
 import com.jaime.jaime.util.AlimentarCampos;
 
 import java.util.ArrayList;
@@ -36,19 +38,25 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         pegarReferencias();
         pegarExtras();
 
-        estabelecimentos = new ArrayList<Estabelecimento>();
-        estabelecimentos = alimentarEstabelecimentos(categoria);
+        estabelecimentos = new ArrayList<>();
+        AlimentarBanco alimentarBanco = new AlimentarBanco();
+
+        estabelecimentos = listarEstabelecimentos();
+        if(estabelecimentos.isEmpty()){
+            alimentarBanco.pegarListaEstabelecimentosAlimentada(SelecionarLocalActivity.this, categoria);
+            estabelecimentos = listarEstabelecimentos();
+        }
         adapter = new EstabelecimentoAdapter(this, estabelecimentos);
 
         listView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
 
-        //Se tiver vazio mostra um ícone do Android
+        //Se tiver vazio mostra um ícone do Android(não tá funcionando)
         listView.setEmptyView(findViewById(android.R.id.empty));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view,
-                                    int position, long id) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Estabelecimento estabelecimento = (Estabelecimento) adapterView.getItemAtPosition(position);
                 if (estabelecimento != null) {
 
@@ -77,13 +85,25 @@ public class SelecionarLocalActivity extends AppCompatActivity {
      *
      * @return Uma Lista com todos estabelecimentos
      */
-    private List<Estabelecimento> alimentarEstabelecimentos(String categoria) {
+    private List<Estabelecimento> alimentarEstabelecimentosOLD(String categoria) {
         AlimentarCampos alimentarCampos = new AlimentarCampos();
 
         List<Estabelecimento> lista = new ArrayList<Estabelecimento>();
 
         lista.addAll(alimentarCampos.pegarListaEstabelecimentosAlimentada(categoria));
 
+        return lista;
+    }
+
+    /**
+     * Lista todos os estabelecimentos(falta botar o filtro)
+     *
+     * @return
+     */
+    public List<Estabelecimento> listarEstabelecimentos() {
+        List<Estabelecimento> lista = new ArrayList<>();
+        EstabelecimentoDAO dao = new EstabelecimentoDAO(SelecionarLocalActivity.this);
+        lista = (List<Estabelecimento>) dao.buscarEstabelecimentos();
         return lista;
     }
 }

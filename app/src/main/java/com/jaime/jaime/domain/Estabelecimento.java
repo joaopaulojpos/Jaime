@@ -4,41 +4,41 @@ import java.io.Serializable;
 
 public class Estabelecimento implements Serializable{
 
-    private int id;//
-    private String nome;//
-    private String telefone;//
-    private String site;//
-    private String descricao;//
-    private String endereco;//
+    private int id;
+    private String nome;
+    private String telefone;
+    private String site;
+    private String descricao;
+    private String endereco;
     private String categoria;
-    private String horarioAbre;//
-    private String horarioFecha;//
-    private int nota;//
-    private int totalVotos;//
+    private String horarioAbre;
+    private String horarioFecha;
+    private Integer nota;
+    private Integer totalVotos;
     private Long latitude;
     private Long longitude;
-    private int imagem;//
-    private boolean isLocalPublico;//
+    private Integer imagem;
+    private Integer localPublico;
 
     public Estabelecimento() {
     }
 
-    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, int nota, int totalVotos, Long latitude, Long longitude, int imagem, boolean isLocalPublico) {
-        this.setId(id);
-        this.setNome(nome);
-        this.setTelefone(telefone);
-        this.setSite(site);
-        this.setDescricao(descricao);
-        this.setEndereco(endereco);
-        this.setCategoria(categoria);
-        this.setHorarioAbre(horarioAbre);
-        this.setHorarioFecha(horarioFecha);
-        this.setNota(nota);
-        this.setTotalVotos(totalVotos);
-        this.setLatitude(latitude);
-        this.setLongitude(longitude);
-        this.setImagem(imagem);
-        this.setLocalPublico(isLocalPublico);
+    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, Integer nota, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico) {
+        this.id = id;
+        this.nome = nome;
+        this.telefone = telefone;
+        this.site = site;
+        this.descricao = descricao;
+        this.endereco = endereco;
+        this.categoria = categoria;
+        this.horarioAbre = horarioAbre;
+        this.horarioFecha = horarioFecha;
+        this.nota = nota;
+        this.totalVotos = totalVotos;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.imagem = imagem;
+        this.localPublico = localPublico;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Estabelecimento implements Serializable{
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
                 ", imagem=" + imagem +
-                ", isLocalPublico=" + isLocalPublico +
+                ", localPublico=" + localPublico +
                 '}';
     }
 
@@ -70,10 +70,6 @@ public class Estabelecimento implements Serializable{
         Estabelecimento that = (Estabelecimento) o;
 
         if (id != that.id) return false;
-        if (nota != that.nota) return false;
-        if (totalVotos != that.totalVotos) return false;
-        if (imagem != that.imagem) return false;
-        if (isLocalPublico != that.isLocalPublico) return false;
         if (nome != null ? !nome.equals(that.nome) : that.nome != null) return false;
         if (telefone != null ? !telefone.equals(that.telefone) : that.telefone != null)
             return false;
@@ -88,9 +84,15 @@ public class Estabelecimento implements Serializable{
             return false;
         if (horarioFecha != null ? !horarioFecha.equals(that.horarioFecha) : that.horarioFecha != null)
             return false;
+        if (nota != null ? !nota.equals(that.nota) : that.nota != null) return false;
+        if (totalVotos != null ? !totalVotos.equals(that.totalVotos) : that.totalVotos != null)
+            return false;
         if (latitude != null ? !latitude.equals(that.latitude) : that.latitude != null)
             return false;
-        return longitude != null ? longitude.equals(that.longitude) : that.longitude == null;
+        if (longitude != null ? !longitude.equals(that.longitude) : that.longitude != null)
+            return false;
+        if (imagem != null ? !imagem.equals(that.imagem) : that.imagem != null) return false;
+        return localPublico != null ? localPublico.equals(that.localPublico) : that.localPublico == null;
     }
 
     @Override
@@ -104,12 +106,12 @@ public class Estabelecimento implements Serializable{
         result = 31 * result + (categoria != null ? categoria.hashCode() : 0);
         result = 31 * result + (horarioAbre != null ? horarioAbre.hashCode() : 0);
         result = 31 * result + (horarioFecha != null ? horarioFecha.hashCode() : 0);
-        result = 31 * result + nota;
-        result = 31 * result + totalVotos;
+        result = 31 * result + (nota != null ? nota.hashCode() : 0);
+        result = 31 * result + (totalVotos != null ? totalVotos.hashCode() : 0);
         result = 31 * result + (latitude != null ? latitude.hashCode() : 0);
         result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
-        result = 31 * result + imagem;
-        result = 31 * result + (isLocalPublico ? 1 : 0);
+        result = 31 * result + (imagem != null ? imagem.hashCode() : 0);
+        result = 31 * result + (localPublico != null ? localPublico.hashCode() : 0);
         return result;
     }
 
@@ -185,19 +187,19 @@ public class Estabelecimento implements Serializable{
         this.horarioFecha = horarioFecha;
     }
 
-    public int getNota() {
+    public Integer getNota() {
         return nota;
     }
 
-    public void setNota(int nota) {
+    public void setNota(Integer nota) {
         this.nota = nota;
     }
 
-    public int getTotalVotos() {
+    public Integer getTotalVotos() {
         return totalVotos;
     }
 
-    public void setTotalVotos(int totalVotos) {
+    public void setTotalVotos(Integer totalVotos) {
         this.totalVotos = totalVotos;
     }
 
@@ -217,19 +219,19 @@ public class Estabelecimento implements Serializable{
         this.longitude = longitude;
     }
 
-    public int getImagem() {
+    public Integer getImagem() {
         return imagem;
     }
 
-    public void setImagem(int imagem) {
+    public void setImagem(Integer imagem) {
         this.imagem = imagem;
     }
 
-    public boolean isLocalPublico() {
-        return isLocalPublico;
+    public Integer getLocalPublico() {
+        return localPublico;
     }
 
-    public void setLocalPublico(boolean localPublico) {
-        isLocalPublico = localPublico;
+    public void setLocalPublico(Integer localPublico) {
+        this.localPublico = localPublico;
     }
 }

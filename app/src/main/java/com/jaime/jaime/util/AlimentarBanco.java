@@ -1,5 +1,7 @@
 package com.jaime.jaime.util;
 
+import android.content.Context;
+
 import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
 import com.jaime.jaime.enums.EstabelecimentosEnum;
@@ -7,20 +9,15 @@ import com.jaime.jaime.enums.EstabelecimentosEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlimentarCampos {
+public class AlimentarBanco {
 
-    TextoUtil textoUtil;
-    List<Estabelecimento> estabelecimentos;
+    TextoUtil textoUtil = new TextoUtil();
 
-    public AlimentarCampos() {
-        textoUtil = new TextoUtil();
-    }
-
-    public List<Estabelecimento> pegarListaEstabelecimentosAlimentada(String categoria) {
-        estabelecimentos = new ArrayList<Estabelecimento>();
+    public List<Estabelecimento> pegarListaEstabelecimentosAlimentada(Context context, String categoria) {
+        List<Estabelecimento> estabelecimentos = new ArrayList<Estabelecimento>();
         switch (categoria.toLowerCase()) {
             case "teatro":
-                alimentarTeatros();
+                cargaTeatros(context);
                 break;
             case "restaurante":
 
@@ -56,8 +53,9 @@ public class AlimentarCampos {
         return estabelecimentos;
     }
 
+    public void cargaTeatros(Context context) {
+        EstabelecimentoDAO dao = new EstabelecimentoDAO(context);
 
-    private void alimentarTeatros() {
         Estabelecimento e1 = new Estabelecimento();
         e1.setNome("Teatro de Santa Isabel");
         String wikipediaTexto = "O Teatro de Santa Isabel é um teatro localizado na cidade brasileira do Recife, capital do estado de Pernambuco. É um raro exemplo de genuína arquitetura neoclássica da primeira metade do século XIX brasileiro.";
@@ -72,6 +70,8 @@ public class AlimentarCampos {
         e1.setTotalVotos(248);
         e1.setHorarioAbre("08:00");
         e1.setHorarioFecha("22:00");
+        e1.setLatitude(45654L);
+        e1.setLongitude(5555L);
 
         Estabelecimento e2 = new Estabelecimento();
         e2.setNome("Teatro RioMar Recife");
@@ -80,17 +80,17 @@ public class AlimentarCampos {
         e2.setLocalPublico(0);
         e2.setEndereco("Av. República do Líbano, 251 - Pina, Recife - PE, 51110-160");
         e2.setTelefone("4003-1212");
-        e1.setSite("www.teatroriomarrecife.com.br");
+        e2.setSite("www.teatroriomarrecife.com.br");
         e2.setCategoria(EstabelecimentosEnum.TEATRO.toString());
         e2.setImagem(2);
         e2.setNota(2);
         e2.setTotalVotos(105);
         e2.setHorarioAbre("10:00");
         e2.setHorarioFecha("20:00");
+        e2.setLatitude(45654L);
+        e2.setLongitude(84849L);
 
-        estabelecimentos.add(e1);
-        estabelecimentos.add(e2);
+        dao.salvar(e1);
+        dao.salvar(e2);
     }
-
-
 }

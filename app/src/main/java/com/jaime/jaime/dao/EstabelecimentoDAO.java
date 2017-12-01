@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.jaime.jaime.domain.Estabelecimento;
 
@@ -14,22 +15,56 @@ import java.util.List;
 
 
 public class EstabelecimentoDAO extends SQLiteOpenHelper {
+    //Toda vez que mudar o banco aumenta um nesse atributo.
+    private static final int VERSAO = 11;
+
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-
+        String sql = "create table estabelecimento" +
+                "(id integer primary key AUTOINCREMENT, " +
+                "nome TEXT, " +
+                "telefone TEXT, " +
+                "site TEXT, " +
+                "descricao TEXT, " +
+                "endereco TEXT, " +
+                "categoria TEXT, " +
+                "horarioAbre TEXT, " +
+                "horarioFecha TEXT, " +
+                "nota integer," +
+                "totalVotos integer, " +
+                "latitude LONG, " +
+                "longitude LONG, " +
+                "imagem integer, " +
+                "localPublico integer);";
+        sqLiteDatabase.execSQL(sql);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        String sql = "drop table estabelecimento;";
+        sqLiteDatabase.execSQL(sql);
+        onCreate(sqLiteDatabase);
     }
 
     public EstabelecimentoDAO(Context context) {
-        super(context, "escola", null, 3);
+
+        super(context, "jaime", null, VERSAO);
     }
 
 
 //MÉTODOS
+
+    /**
+     * Temporário
+     *
+     * @param sqLiteDatabase
+     */
+    public void deletarTabelaPrincipal(SQLiteDatabase sqLiteDatabase) {
+        String sql = "drop table estabelecimento;";
+        sqLiteDatabase.execSQL(sql);
+        onCreate(sqLiteDatabase);
+    }
 
     public void salvar(Estabelecimento estabelecimento) {
         //Montar o Dicionário de Dados = ContentValues
@@ -58,14 +93,14 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         cv.put("endereco", estabelecimento.getEndereco());
         cv.put("horarioabre", estabelecimento.getHorarioAbre());
         cv.put("horariofecha", estabelecimento.getHorarioFecha());
-        cv.put("id", estabelecimento.getId());
         cv.put("imagem", estabelecimento.getImagem());
         cv.put("latitude", estabelecimento.getLatitude());
         cv.put("longitude", estabelecimento.getLongitude());
         cv.put("nota", estabelecimento.getNota());
         cv.put("site", estabelecimento.getSite());
         cv.put("telefone", estabelecimento.getTelefone());
-        cv.put("totalvotos", estabelecimento.getTotalVotos());
+        cv.put("totalVotos", estabelecimento.getTotalVotos());
+        cv.put("localPublico", estabelecimento.getLocalPublico());
         return cv;
     }
 
@@ -98,13 +133,13 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setNota(cursor.getInt(cursor.getColumnIndex("nota")));
             estabelecimento.setEndereco(cursor.getString(cursor.getColumnIndex("endereco")));
             estabelecimento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
-            estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localpublico")) == 1);
-            estabelecimento.setTotalVotos(cursor.getInt(cursor.getColumnIndex("totalvotos")));
-            estabelecimento.setHorarioAbre(cursor.getString(cursor.getColumnIndex("horarioabre")));
-            estabelecimento.setHorarioFecha(cursor.getString(cursor.getColumnIndex("horariofecha")));
+            estabelecimento.setTotalVotos(cursor.getInt(cursor.getColumnIndex("totalVotos")));
+            estabelecimento.setHorarioAbre(cursor.getString(cursor.getColumnIndex("horarioAbre")));
+            estabelecimento.setHorarioFecha(cursor.getString(cursor.getColumnIndex("horarioFecha")));
             estabelecimento.setCategoria(cursor.getString(cursor.getColumnIndex("categoria")));
             estabelecimento.setLatitude(cursor.getLong(cursor.getColumnIndex("latitude")));
             estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
+            estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
 
             estabelecimentos.add(estabelecimento);
         }

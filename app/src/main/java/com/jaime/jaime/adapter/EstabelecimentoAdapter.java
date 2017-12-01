@@ -58,6 +58,7 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         // Passo 2 Criar View nova
         convertView = LayoutInflater.from(context).inflate(R.layout.estabelecimento_item, null);
 
+
         ImageView imgImagem = (ImageView) convertView.findViewById(R.id.img);
         RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.ratingBar);
         TextView tvDescricao = (TextView) convertView.findViewById(R.id.tvDescricao);
