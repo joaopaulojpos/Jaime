@@ -3,5 +3,7 @@
         <item>@drawable/imagem_teste</item>
         <item>@drawable/teatro_santa_isabel</item>
         <item>@drawable/teatro_rio_mar</item>
+        <item>@drawable/shopping_boa_vista</item>
+        <item>@drawable/shopping_recife</item>
     </array>
 </resources>

@@ -47,10 +47,51 @@ public class AlimentarBanco {
 
                 break;
             case "shopping":
-
+                cargaShopping(context);
                 break;
         }
         return estabelecimentos;
+    }
+
+    private void cargaShopping(Context context) {
+        EstabelecimentoDAO dao = new EstabelecimentoDAO(context);
+
+        Estabelecimento e1 = new Estabelecimento();
+        e1.setNome("Shopping Recife");
+        String wikipediaTexto = "O Shopping Recife, antigo Shopping Center Recife, é um centro comercial de grande porte localizado no bairro de Boa Viagem, no Recife, estado de Pernambuco.";
+        e1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto));
+        e1.setLocalPublico(0);
+        e1.setEndereco("R. Padre Carapuceiro, 777 - Boa Viagem, Recife - PE, 51020-900");
+        e1.setTelefone("(81) 3464-6464");
+        e1.setSite("www.shoppingrecife.com.br");
+        e1.setCategoria(EstabelecimentosEnum.TEATRO.toString());
+        e1.setImagem(4);
+        e1.setNota(5);
+        e1.setTotalVotos(50);
+        e1.setHorarioAbre("09:00");
+        e1.setHorarioFecha("22:00");
+        e1.setLatitude(7878L);
+        e1.setLongitude(456L);
+
+        Estabelecimento e2 = new Estabelecimento();
+        e2.setNome("Shopping Boa Vista");
+        String wikipediaTexto2 = "";
+        e2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2));
+        e2.setLocalPublico(0);
+        e2.setEndereco("R. do Giriquiti, 48 - Boa Vista, Recife - PE, 50070-010");
+        e2.setTelefone("(81) 3423-5666");
+        e2.setSite("www.shoppingboavista.com.br");
+        e2.setCategoria(EstabelecimentosEnum.TEATRO.toString());
+        e2.setImagem(3);
+        e2.setNota(4);
+        e2.setTotalVotos(875);
+        e2.setHorarioAbre("09:00");
+        e2.setHorarioFecha("21:00");
+        e2.setLatitude(545456L);
+        e2.setLongitude(8488L);
+
+        dao.salvar(e1);
+        dao.salvar(e2);
     }
 
     public void cargaTeatros(Context context) {

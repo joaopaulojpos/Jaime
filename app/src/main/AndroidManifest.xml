@@ -21,7 +21,8 @@
         <activity android:name=".activity.CategoriaEstabelecimentosActivity" />
         <activity android:name=".activity.SelecionarLocalActivity" />
         <activity android:name=".activity.EstabelecimentoInfoActivity" />
-        <activity android:name=".apiclima.ClimaActivity"></activity>
+        <activity android:name=".apiclima.ClimaActivity" />
+        <activity android:name=".teste.TesteActivity" />
     </application>
 
 </manifest>
