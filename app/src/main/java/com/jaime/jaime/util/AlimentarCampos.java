@@ -60,7 +60,10 @@ public class AlimentarCampos {
     private void alimentarTeatros() {
         Estabelecimento e1 = new Estabelecimento();
         e1.setNome("Teatro de Santa Isabel");
-        String wikipediaTexto = "O Teatro de Santa Isabel é um teatro localizado na cidade brasileira do Recife, capital do estado de Pernambuco. É um raro exemplo de genuína arquitetura neoclássica da primeira metade do século XIX brasileiro.";
+        String wikipediaTexto = "O Teatro de Santa Isabe" +
+                "l é um teatro localizado na cidade brasileira do Recife, capital do estado de " +
+                "Pernambuco. É um raro exemplo de genuína arquitetura neoclássica da primeira " +
+                "metade do século XIX brasileiro.";
         e1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto));
         e1.setLocalPublico(0);
         e1.setEndereco("Praça da República, s/n - Santo Antônio, Recife - PE, 50010-040");
@@ -75,7 +78,8 @@ public class AlimentarCampos {
 
         Estabelecimento e2 = new Estabelecimento();
         e2.setNome("Teatro RioMar Recife");
-        String wikipediaTexto2 = "Teatro de 1000 assentos numerados com balcão superior e programação variada de espetáculos cênicos e cômicos.";
+        String wikipediaTexto2 = "Teatro de 1000 assentos numerados com balcão superior e " +
+                "programação variada de espetáculos cênicos e cômicos.";
         e2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2));
         e2.setLocalPublico(0);
         e2.setEndereco("Av. República do Líbano, 251 - Pina, Recife - PE, 51110-160");

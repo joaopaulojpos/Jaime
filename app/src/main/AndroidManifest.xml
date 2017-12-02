@@ -23,6 +23,7 @@
         <activity android:name=".activity.EstabelecimentoInfoActivity" />
         <activity android:name=".apiclima.ClimaActivity" />
         <activity android:name=".teste.TesteActivity" />
+        <activity android:name=".ViewpagerActivity"></activity>
     </application>
 
 </manifest>
