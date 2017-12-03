@@ -6,12 +6,16 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jaime.jaime.R;
+import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
 
 
@@ -31,7 +35,6 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
     private CheckBox chkFav;
     private ImageView imagem;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,35 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
         pegarExtras();
         pegarReferencias();
         setarCamposDaTela();
+
+        avaliarEstabelecimento();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        float notaa = new EstabelecimentoDAO(EstabelecimentoInfoActivity.this).listarEstabelecimento(estabelecimento.getId()).getNota();
+        ratingBarAvalie.setRating(notaa);
+
+        Log.i("Leandro", "Resume:\ngetNota: " + estabelecimento.getNota());
+    }
+
+    private void avaliarEstabelecimento() {
+        ratingBarAvalie.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                EstabelecimentoDAO dao = new EstabelecimentoDAO(EstabelecimentoInfoActivity.this);
+                estabelecimento.setNota(rating);
+                dao.atualizarEstabelecimento(estabelecimento);
+                ratingBarAvalie.setRating(rating);
+                Log.i("Leandro", "Clickou:\ngetNota: " + estabelecimento.getNota());
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 
     private void setarCamposDaTela() {
@@ -55,7 +87,6 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
         TypedArray imagens = res.obtainTypedArray(R.array.imagens);
         imagem.setImageDrawable(imagens.getDrawable(estabelecimento.getImagem()));
 
-        ratingBarAvalie.setEnabled(true);
     }
 
     private void pegarReferencias() {
@@ -75,4 +106,5 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
         intent = getIntent();
         estabelecimento = (Estabelecimento) intent.getSerializableExtra("Estabelecimento");
     }
+
 }

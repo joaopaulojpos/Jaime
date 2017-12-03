@@ -72,7 +72,7 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         imgImagem.setImageDrawable(
                 imagens.getDrawable(estabelecimento.getImagem()));
         ratingBar.setMax(5);
-        ratingBar.setRating(estabelecimento.getNota());
+        ratingBar.setRating(estabelecimento.getNotaMedia());
         tvDescricao.setText(estabelecimento.getDescricao());
         tvTotalVotos.setText("(" + estabelecimento.getTotalVotos() + ")");
 

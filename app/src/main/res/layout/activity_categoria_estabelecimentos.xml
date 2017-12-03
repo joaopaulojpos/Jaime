@@ -74,16 +74,7 @@
                 android:layout_below="@id/btnClima"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:textSize="20dp"
-                android:text="Shopping"/>
-
-            <Button
-                android:id="@+id/btnTeste"
-                android:layout_width="250dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/btnShopping"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
+                android:text="Shopping"
                 android:textSize="20dp" />
 
         </RelativeLayout>

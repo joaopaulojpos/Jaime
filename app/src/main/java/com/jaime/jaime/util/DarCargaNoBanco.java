@@ -1,6 +1,7 @@
 package com.jaime.jaime.util;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
@@ -9,13 +10,17 @@ import com.jaime.jaime.enums.EstabelecimentosEnum;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlimentarBanco {
+import static android.content.ContentValues.TAG;
+
+public class DarCargaNoBanco {
 
     TextoUtil textoUtil = new TextoUtil();
 
 
-    public List<Estabelecimento> pegarListaEstabelecimentosAlimentada(Context context, String categoria) {
+
+    public List<Estabelecimento> darCarga(Context context, String categoria) {
         List<Estabelecimento> estabelecimentos = new ArrayList<Estabelecimento>();
+
         switch (categoria.toLowerCase()) {
             case "teatro":
                 cargaTeatros(context);
@@ -70,7 +75,7 @@ public class AlimentarBanco {
         i1.setSite("http://www.paroquiadaboaviagem.org/");
         i1.setCategoria(EstabelecimentosEnum.IGREJA.toString());
         i1.setImagem(0); // falta
-        i1.setNota(5);
+        i1.setNotaMedia(5f);
         i1.setTotalVotos(0); // falta
         i1.setHorarioAbre("08:00");
         i1.setHorarioFecha("17:00");
@@ -89,7 +94,7 @@ public class AlimentarBanco {
         i2.setSite("");
         i2.setCategoria(EstabelecimentosEnum.IGREJA.toString());
         i2.setImagem(0); // falta
-        i2.setNota(4);
+        i2.setNotaMedia(4f);
         i2.setTotalVotos(0); // falta
         i2.setHorarioAbre("");
         i2.setHorarioFecha("");
@@ -114,7 +119,7 @@ public class AlimentarBanco {
         p1.setSite("");
         p1.setCategoria(EstabelecimentosEnum.PRAIA.toString());
         p1.setImagem(0); // falta
-        p1.setNota(4);
+        p1.setNotaMedia(4f);
         p1.setTotalVotos(0); // falta
         p1.setHorarioAbre("");
         p1.setHorarioFecha("");
@@ -131,7 +136,7 @@ public class AlimentarBanco {
         p2.setSite("");
         p2.setCategoria("");
         p2.setImagem(0); // falta
-        p2.setNota(4);
+        p2.setNotaMedia(4f);
         p2.setTotalVotos(0); // falta
         p2.setHorarioAbre("");
         p2.setHorarioFecha("");
@@ -155,7 +160,7 @@ public class AlimentarBanco {
         a1.setSite("http://www2.recife.pe.gov.br/servico/academia-recife");
         a1.setCategoria(EstabelecimentosEnum.ACADEMIA.toString());
         a1.setImagem(0); // falta
-        a1.setNota(5);
+        a1.setNotaMedia(5f);
         a1.setTotalVotos(0); // falta
         a1.setHorarioAbre("05:00");
         a1.setHorarioFecha("23:00");
@@ -172,7 +177,7 @@ public class AlimentarBanco {
         a2.setSite("http://www.yesfitacademia.com.br/yessite/iniciopge.aspx");
         a2.setCategoria(EstabelecimentosEnum.ACADEMIA.toString());
         a2.setImagem(0); // falta
-        a2.setNota(4);
+        a2.setNotaMedia(4f);
         a2.setTotalVotos(0); // falta
         a2.setHorarioAbre("05:00");
         a2.setHorarioFecha("23:00");
@@ -196,7 +201,7 @@ public class AlimentarBanco {
         p1.setSite("");
         p1.setCategoria("");
         p1.setImagem(0); // falta
-        p1.setNota(5);
+        p1.setNotaMedia(5f);
         p1.setTotalVotos(0); // falta
         p1.setHorarioAbre("");
         p1.setHorarioFecha("");
@@ -213,7 +218,7 @@ public class AlimentarBanco {
         p2.setSite("");
         p2.setCategoria("");
         p2.setImagem(0); // falta
-        p2.setNota(5);
+        p2.setNotaMedia(5f);
         p2.setTotalVotos(0); // falta
         p2.setHorarioAbre("");
         p2.setHorarioFecha("");
@@ -237,7 +242,7 @@ public class AlimentarBanco {
         e1.setSite("");
         e1.setCategoria("");
         e1.setImagem(0); // falta
-        e1.setNota(5);
+        e1.setNotaMedia(5f);
         e1.setTotalVotos(0); // falta
         e1.setHorarioAbre("");
         e1.setHorarioFecha("");
@@ -254,7 +259,7 @@ public class AlimentarBanco {
         e2.setSite("");
         e2.setCategoria("");
         e2.setImagem(0); // falta
-        e2.setNota(5);
+        e2.setNotaMedia(5f);
         e2.setTotalVotos(0); // falta
         e2.setHorarioAbre("");
         e2.setHorarioFecha("");
@@ -278,7 +283,7 @@ public class AlimentarBanco {
         p1.setSite("");
         p1.setCategoria("");
         p1.setImagem(0); // falta
-        p1.setNota(5);
+        p1.setNotaMedia(5f);
         p1.setTotalVotos(0); // falta
         p1.setHorarioAbre("");
         p1.setHorarioFecha("");
@@ -295,7 +300,7 @@ public class AlimentarBanco {
         p2.setSite("");
         p2.setCategoria("");
         p2.setImagem(0); // falta
-        p2.setNota(5);
+        p2.setNotaMedia(5f);
         p2.setTotalVotos(0); // falta
         p2.setHorarioAbre("");
         p2.setHorarioFecha("");
@@ -320,7 +325,7 @@ public class AlimentarBanco {
         m1.setSite("");
         m1.setCategoria("");
         m1.setImagem(0); // falta
-        m1.setNota(5);
+        m1.setNotaMedia(5f);
         m1.setTotalVotos(0); // falta
         m1.setHorarioAbre("");
         m1.setHorarioFecha("");
@@ -337,7 +342,7 @@ public class AlimentarBanco {
         m2.setSite("");
         m2.setCategoria("");
         m2.setImagem(0); // falta
-        m2.setNota(5);
+        m2.setNotaMedia(5f);
         m2.setTotalVotos(0); // falta
         m2.setHorarioAbre("");
         m2.setHorarioFecha("");
@@ -361,7 +366,7 @@ public class AlimentarBanco {
         h1.setSite("");
         h1.setCategoria("");
         h1.setImagem(0); // falta
-        h1.setNota(5);
+        h1.setNotaMedia(5f);
         h1.setTotalVotos(0); // falta
         h1.setHorarioAbre("");
         h1.setHorarioFecha("");
@@ -378,7 +383,7 @@ public class AlimentarBanco {
         h2.setSite("");
         h2.setCategoria("");
         h2.setImagem(0); // falta
-        h2.setNota(5);
+        h2.setNotaMedia(5f);
         h2.setTotalVotos(0); // falta
         h2.setHorarioAbre("");
         h2.setHorarioFecha("");
@@ -403,7 +408,7 @@ public class AlimentarBanco {
         r1.setSite("https://www.facebook.com/seulunafanpage/?pnref=lhc");
         r1.setCategoria("");
         r1.setImagem(0); // falta
-        r1.setNota(5);
+        r1.setNotaMedia(5f);
         r1.setTotalVotos(0); // falta
         r1.setHorarioAbre("11:00");
         r1.setHorarioFecha("17:00");
@@ -421,7 +426,7 @@ public class AlimentarBanco {
         r2.setSite("");
         r2.setCategoria("");
         r2.setImagem(0);
-        r2.setNota(0);
+        r2.setNotaMedia(0f);
         r2.setTotalVotos(0);
         r2.setHorarioAbre("11:00");
         r2.setHorarioFecha("23:00");
@@ -444,7 +449,7 @@ public class AlimentarBanco {
         s1.setSite("www.shoppingrecife.com.br");
         s1.setCategoria(EstabelecimentosEnum.SHOPPING.toString());
         s1.setImagem(4);
-        s1.setNota(5);
+        s1.setNotaMedia(5f);
         s1.setTotalVotos(50);
         s1.setHorarioAbre("09:00");
         s1.setHorarioFecha("22:00");
@@ -461,7 +466,7 @@ public class AlimentarBanco {
         s2.setSite("www.shoppingboavista.com.br");
         s2.setCategoria(EstabelecimentosEnum.SHOPPING.toString());
         s2.setImagem(3);
-        s2.setNota(4);
+        s2.setNotaMedia(4f);
         s2.setTotalVotos(875);
         s2.setHorarioAbre("09:00");
         s2.setHorarioFecha("21:00");
@@ -488,7 +493,8 @@ public class AlimentarBanco {
         t1.setSite("www.teatrosantaisabel.com.br");
         t1.setCategoria(EstabelecimentosEnum.TEATRO.toString());
         t1.setImagem(1);
-        t1.setNota(4);
+        t1.setNotaMedia(4.0f);
+        t1.setNota(0.0f);
         t1.setTotalVotos(248);
         t1.setHorarioAbre("08:00");
         t1.setHorarioFecha("22:00");
@@ -506,7 +512,8 @@ public class AlimentarBanco {
         t2.setSite("www.teatroriomarrecife.com.br");
         t2.setCategoria(EstabelecimentosEnum.TEATRO.toString());
         t2.setImagem(2);
-        t2.setNota(2);
+        t2.setNotaMedia(2.0f);
+        t2.setNota(0.0f);
         t2.setTotalVotos(105);
         t2.setHorarioAbre("10:00");
         t2.setHorarioFecha("20:00");

@@ -3,7 +3,6 @@ package com.jaime.jaime.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -12,7 +11,7 @@ import com.jaime.jaime.R;
 import com.jaime.jaime.adapter.EstabelecimentoAdapter;
 import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
-import com.jaime.jaime.util.AlimentarBanco;
+import com.jaime.jaime.util.DarCargaNoBanco;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,10 +36,9 @@ public class SelecionarLocalActivity extends AppCompatActivity {
 
         pegarReferencias();
         pegarExtras();
-        Log.i("Leandro", "On Create da tela SelecionarLocalActivity.\nCategoria: " + categoria);
 
         estabelecimentos = new ArrayList<>();
-        AlimentarBanco alimentarBanco = new AlimentarBanco();
+        DarCargaNoBanco darCargaNoBanco = new DarCargaNoBanco();
 
         //Pega do banco os Estabelecimentos da categoria escolhida
         estabelecimentos = listarEstabelecimentos(categoria);
@@ -48,8 +46,8 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         //se a lista estiver vazia quer dizer que o banco tá vazio, então...
         if (estabelecimentos.isEmpty()) {
             //Damos uma carga no banco por ex: Se o usuário quer listar os shoppings, esse método
-            //pegarListaEstabelecimentosAlimentada vai inserir no banco todos os shoppings
-            alimentarBanco.pegarListaEstabelecimentosAlimentada(SelecionarLocalActivity.this, categoria);
+            //darCarga vai inserir no banco todos os shoppings
+            darCargaNoBanco.darCarga(SelecionarLocalActivity.this, categoria);
             //agora quando for pegar do banco não vai mais vir vazia
             estabelecimentos = listarEstabelecimentos(categoria);
         }

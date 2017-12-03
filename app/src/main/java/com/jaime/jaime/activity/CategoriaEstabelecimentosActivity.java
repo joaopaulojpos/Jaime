@@ -17,7 +17,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
     private Button btnTeatro;
     private Button btnClima;
     private Intent intent;
-    private Button btnTeste;
     private Button btnShopping;
 
     //ATRIBUTOS Teste commit
@@ -51,9 +50,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
             case R.id.btnShopping:
                 intent.putExtra("Categoria", "Shopping");
                 break;
-            case R.id.btnTeste:
-                intent = new Intent(CategoriaEstabelecimentosActivity.this, TesteActivity.class);
-                break;
         }
         startActivity(intent);
     }
@@ -72,7 +68,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         btnTeatro = findViewById(R.id.btnTeatro);
         btnClima = findViewById(R.id.btnClima);
         btnShopping = findViewById(R.id.btnShopping);
-        btnTeste = findViewById(R.id.btnTeste);
     }
 
     public void listenarBotoes() {
@@ -80,6 +75,5 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         btnBar.setOnClickListener(this);
         btnTeatro.setOnClickListener(this);
         btnShopping.setOnClickListener(this);
-        btnTeste.setOnClickListener(this);
     }
 }

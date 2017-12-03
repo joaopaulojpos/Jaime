@@ -13,7 +13,8 @@ public class Estabelecimento implements Serializable{
     private String categoria;
     private String horarioAbre;
     private String horarioFecha;
-    private Integer nota;
+    private Float nota;
+    private Float notaMedia;
     private Integer totalVotos;
     private Long latitude;
     private Long longitude;
@@ -23,7 +24,7 @@ public class Estabelecimento implements Serializable{
     public Estabelecimento() {
     }
 
-    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, Integer nota, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico) {
+    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -34,6 +35,7 @@ public class Estabelecimento implements Serializable{
         this.horarioAbre = horarioAbre;
         this.horarioFecha = horarioFecha;
         this.nota = nota;
+        this.notaMedia = notaMedia;
         this.totalVotos = totalVotos;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -54,6 +56,7 @@ public class Estabelecimento implements Serializable{
                 ", horarioAbre='" + horarioAbre + '\'' +
                 ", horarioFecha='" + horarioFecha + '\'' +
                 ", nota=" + nota +
+                ", notaMedia=" + notaMedia +
                 ", totalVotos=" + totalVotos +
                 ", latitude=" + latitude +
                 ", longitude=" + longitude +
@@ -85,6 +88,8 @@ public class Estabelecimento implements Serializable{
         if (horarioFecha != null ? !horarioFecha.equals(that.horarioFecha) : that.horarioFecha != null)
             return false;
         if (nota != null ? !nota.equals(that.nota) : that.nota != null) return false;
+        if (notaMedia != null ? !notaMedia.equals(that.notaMedia) : that.notaMedia != null)
+            return false;
         if (totalVotos != null ? !totalVotos.equals(that.totalVotos) : that.totalVotos != null)
             return false;
         if (latitude != null ? !latitude.equals(that.latitude) : that.latitude != null)
@@ -107,6 +112,7 @@ public class Estabelecimento implements Serializable{
         result = 31 * result + (horarioAbre != null ? horarioAbre.hashCode() : 0);
         result = 31 * result + (horarioFecha != null ? horarioFecha.hashCode() : 0);
         result = 31 * result + (nota != null ? nota.hashCode() : 0);
+        result = 31 * result + (notaMedia != null ? notaMedia.hashCode() : 0);
         result = 31 * result + (totalVotos != null ? totalVotos.hashCode() : 0);
         result = 31 * result + (latitude != null ? latitude.hashCode() : 0);
         result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
@@ -187,12 +193,20 @@ public class Estabelecimento implements Serializable{
         this.horarioFecha = horarioFecha;
     }
 
-    public Integer getNota() {
+    public Float getNota() {
         return nota;
     }
 
-    public void setNota(Integer nota) {
+    public void setNota(Float nota) {
         this.nota = nota;
+    }
+
+    public Float getNotaMedia() {
+        return notaMedia;
+    }
+
+    public void setNotaMedia(Float notaMedia) {
+        this.notaMedia = notaMedia;
     }
 
     public Integer getTotalVotos() {

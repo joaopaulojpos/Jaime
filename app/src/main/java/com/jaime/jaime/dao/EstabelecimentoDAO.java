@@ -16,7 +16,7 @@ import java.util.List;
 
 public class EstabelecimentoDAO extends SQLiteOpenHelper {
     //Toda vez que mudar o banco aumenta um nesse atributo.
-    private static final int VERSAO = 12;
+    private static final int VERSAO = 26;
 
 
     @Override
@@ -32,7 +32,8 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
                 "categoria TEXT, " +
                 "horarioAbre TEXT, " +
                 "horarioFecha TEXT, " +
-                "nota integer," +
+                "nota REAL, " +
+                "notaMedia REAL, " +
                 "totalVotos integer, " +
                 "latitude LONG, " +
                 "longitude LONG, " +
@@ -88,6 +89,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         cv.put("latitude", estabelecimento.getLatitude());
         cv.put("longitude", estabelecimento.getLongitude());
         cv.put("nota", estabelecimento.getNota());
+        cv.put("notaMedia", estabelecimento.getNotaMedia());
         cv.put("site", estabelecimento.getSite());
         cv.put("telefone", estabelecimento.getTelefone());
         cv.put("totalVotos", estabelecimento.getTotalVotos());
@@ -110,12 +112,10 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
     }
 
 
-
     public List<Estabelecimento> listarEstabelecimentos(String categoria) {
         categoria = categoria.toUpperCase();
         String sql = "select * from estabelecimento " +
                 "WHERE categoria = '" + categoria + "';";
-        Log.i("Leandro:", sql);
         List<Estabelecimento> estabelecimentos = new ArrayList<Estabelecimento>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
@@ -126,7 +126,8 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setSite(cursor.getString(cursor.getColumnIndex("site")));
             estabelecimento.setTelefone(cursor.getString(cursor.getColumnIndex("telefone")));
             estabelecimento.setImagem(cursor.getInt(cursor.getColumnIndex("imagem")));
-            estabelecimento.setNota(cursor.getInt(cursor.getColumnIndex("nota")));
+            estabelecimento.setNota(cursor.getFloat(cursor.getColumnIndex("nota")));
+            estabelecimento.setNotaMedia(cursor.getFloat(cursor.getColumnIndex("notaMedia")));
             estabelecimento.setEndereco(cursor.getString(cursor.getColumnIndex("endereco")));
             estabelecimento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
             estabelecimento.setTotalVotos(cursor.getInt(cursor.getColumnIndex("totalVotos")));
@@ -137,12 +138,46 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
 
-            Log.i("Leandro", "EstabelecimentoDAO>\nlistarEstabelecimentos(String categoria)\n");
-            Log.i("Leandro", "Nome: " + cursor.getString(cursor.getColumnIndex("nome")) + "\n");
-            Log.i("Leandro", "Categoria: " + cursor.getString(cursor.getColumnIndex("categoria")) + "\n");
             estabelecimentos.add(estabelecimento);
         }
         return estabelecimentos;
     }
 
+    public Estabelecimento listarEstabelecimento(int id) {
+        String sql = "select * from estabelecimento " +
+                "WHERE id = '" + id + "';";
+        SQLiteDatabase db = getReadableDatabase();
+        Estabelecimento estabelecimento = new Estabelecimento();
+        Cursor cursor = db.rawQuery(sql, null);
+        while (cursor.moveToNext()) {
+            estabelecimento.setId(cursor.getInt(cursor.getColumnIndex("id")));
+            estabelecimento.setNome(cursor.getString(cursor.getColumnIndex("nome")));
+            estabelecimento.setSite(cursor.getString(cursor.getColumnIndex("site")));
+            estabelecimento.setTelefone(cursor.getString(cursor.getColumnIndex("telefone")));
+            estabelecimento.setImagem(cursor.getInt(cursor.getColumnIndex("imagem")));
+            estabelecimento.setNota(cursor.getFloat(cursor.getColumnIndex("nota")));
+            estabelecimento.setNotaMedia(cursor.getFloat(cursor.getColumnIndex("notaMedia")));
+            estabelecimento.setEndereco(cursor.getString(cursor.getColumnIndex("endereco")));
+            estabelecimento.setDescricao(cursor.getString(cursor.getColumnIndex("descricao")));
+            estabelecimento.setTotalVotos(cursor.getInt(cursor.getColumnIndex("totalVotos")));
+            estabelecimento.setHorarioAbre(cursor.getString(cursor.getColumnIndex("horarioAbre")));
+            estabelecimento.setHorarioFecha(cursor.getString(cursor.getColumnIndex("horarioFecha")));
+            estabelecimento.setCategoria(cursor.getString(cursor.getColumnIndex("categoria")));
+            estabelecimento.setLatitude(cursor.getLong(cursor.getColumnIndex("latitude")));
+            estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
+            estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
+        }
+        return estabelecimento;
+    }
+
+
+
+
+    //UTIL
+
+    public void truncateEstabelecimentos() {
+        SQLiteDatabase db = getWritableDatabase();
+        String sql = "DELETE FROM estabelecimento;";
+        db.execSQL(sql);
+    }
 }
