@@ -51,6 +51,7 @@ public class SelecionarLocalActivity extends AppCompatActivity {
             //agora quando for pegar do banco não vai mais vir vazia
             estabelecimentos = listarEstabelecimentos(categoria);
         }
+
         adapter = new EstabelecimentoAdapter(this, estabelecimentos);
 
         listView.setAdapter(adapter);
@@ -79,6 +80,12 @@ public class SelecionarLocalActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void limparTableEstabelecimentos(DarCargaNoBanco darCargaNoBanco) {
+        new EstabelecimentoDAO(this).resetarEstabelecimenteos();
+        darCargaNoBanco.darCarga(SelecionarLocalActivity.this, categoria);
+        estabelecimentos = listarEstabelecimentos(categoria);
     }
 
     private void pegarReferencias() {

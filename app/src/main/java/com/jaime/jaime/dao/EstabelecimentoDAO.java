@@ -16,7 +16,7 @@ import java.util.List;
 
 public class EstabelecimentoDAO extends SQLiteOpenHelper {
     //Toda vez que mudar o banco aumenta um nesse atributo.
-    private static final int VERSAO = 26;
+    private static final int VERSAO = 28;
 
 
     @Override
@@ -38,19 +38,17 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
                 "latitude LONG, " +
                 "longitude LONG, " +
                 "imagem integer, " +
-                "localPublico integer);";
+                "localPublico integer, " +
+                "isFavorito integer);";
         sqLiteDatabase.execSQL(sql);
     }
 
     //Ao atualizarEstabelecimento a versão do banco esse método é acionado
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        //dá um drop no banco e...
-        String sql = "drop table estabelecimento;";
-        sqLiteDatabase.execSQL(sql);
-        //joga pro método onCreate que vai criar de novo
-        onCreate(sqLiteDatabase);
+        atualizarTableEstabelecimento(sqLiteDatabase);
     }
+
 
     //CONSTRUTOR
     public EstabelecimentoDAO(Context context) {
@@ -70,10 +68,20 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         //Se o Id for zero, quer dizer que é um novo, se for diferente de zero
         // é porque ele já existia e tá sendo alterado.
         if (estabelecimento.getId() == 0) {
+            estabelecimento = removerNullAtributoFavorito(estabelecimento);
             db.insert("estabelecimento", null, cv);
         } else {
             atualizarEstabelecimento(estabelecimento);
         }
+    }
+
+    private Estabelecimento removerNullAtributoFavorito(Estabelecimento estabelecimento) {
+        //Como tá inserindo pela primeira vez ele nunca será Favorito, então já
+        //será settado antes de ser inserido no banco
+        if (estabelecimento.getIsFavorito() == null) {
+            estabelecimento.setIsFavorito(0);
+        }
+        return estabelecimento;
     }
 
     @NonNull
@@ -94,6 +102,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         cv.put("telefone", estabelecimento.getTelefone());
         cv.put("totalVotos", estabelecimento.getTotalVotos());
         cv.put("localPublico", estabelecimento.getLocalPublico());
+        cv.put("isFavorito", estabelecimento.getIsFavorito());
         return cv;
     }
 
@@ -137,6 +146,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setLatitude(cursor.getLong(cursor.getColumnIndex("latitude")));
             estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
+            estabelecimento.setIsFavorito(cursor.getInt(cursor.getColumnIndex("isFavorito")));
 
             estabelecimentos.add(estabelecimento);
         }
@@ -166,18 +176,28 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setLatitude(cursor.getLong(cursor.getColumnIndex("latitude")));
             estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
+            estabelecimento.setIsFavorito(cursor.getInt(cursor.getColumnIndex("isFavorito")));
         }
         return estabelecimento;
     }
 
 
-
-
     //UTIL
+    public void atualizarTableEstabelecimento(SQLiteDatabase sqLiteDatabase) {
+        //dá um drop no banco e...
+        String sql = "drop table estabelecimento;";
+        sqLiteDatabase.execSQL(sql);
+        //joga pro método onCreate que vai criar de novo
+        onCreate(sqLiteDatabase);
+    }
 
-    public void truncateEstabelecimentos() {
-        SQLiteDatabase db = getWritableDatabase();
-        String sql = "DELETE FROM estabelecimento;";
-        db.execSQL(sql);
+    //Dá um drop e create na tabela Estabelecimento
+    public void resetarEstabelecimenteos() {
+        SQLiteDatabase sqLiteDatabase = getWritableDatabase();
+        //dá um drop no banco e...
+        String sql = "drop table estabelecimento;";
+        sqLiteDatabase.execSQL(sql);
+        //joga pro método onCreate que vai criar de novo
+        onCreate(sqLiteDatabase);
     }
 }

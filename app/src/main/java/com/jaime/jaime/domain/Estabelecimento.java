@@ -20,11 +20,12 @@ public class Estabelecimento implements Serializable{
     private Long longitude;
     private Integer imagem;
     private Integer localPublico;
+    private Integer isFavorito;
 
     public Estabelecimento() {
     }
 
-    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico) {
+    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico, Integer isFavorito) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -41,6 +42,7 @@ public class Estabelecimento implements Serializable{
         this.longitude = longitude;
         this.imagem = imagem;
         this.localPublico = localPublico;
+        this.isFavorito = isFavorito;
     }
 
     @Override
@@ -62,6 +64,7 @@ public class Estabelecimento implements Serializable{
                 ", longitude=" + longitude +
                 ", imagem=" + imagem +
                 ", localPublico=" + localPublico +
+                ", isFavorito=" + isFavorito +
                 '}';
     }
 
@@ -97,7 +100,9 @@ public class Estabelecimento implements Serializable{
         if (longitude != null ? !longitude.equals(that.longitude) : that.longitude != null)
             return false;
         if (imagem != null ? !imagem.equals(that.imagem) : that.imagem != null) return false;
-        return localPublico != null ? localPublico.equals(that.localPublico) : that.localPublico == null;
+        if (localPublico != null ? !localPublico.equals(that.localPublico) : that.localPublico != null)
+            return false;
+        return isFavorito != null ? isFavorito.equals(that.isFavorito) : that.isFavorito == null;
     }
 
     @Override
@@ -118,6 +123,7 @@ public class Estabelecimento implements Serializable{
         result = 31 * result + (longitude != null ? longitude.hashCode() : 0);
         result = 31 * result + (imagem != null ? imagem.hashCode() : 0);
         result = 31 * result + (localPublico != null ? localPublico.hashCode() : 0);
+        result = 31 * result + (isFavorito != null ? isFavorito.hashCode() : 0);
         return result;
     }
 
@@ -247,5 +253,13 @@ public class Estabelecimento implements Serializable{
 
     public void setLocalPublico(Integer localPublico) {
         this.localPublico = localPublico;
+    }
+
+    public Integer getIsFavorito() {
+        return isFavorito;
+    }
+
+    public void setIsFavorito(Integer isFavorito) {
+        this.isFavorito = isFavorito;
     }
 }
