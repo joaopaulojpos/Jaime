@@ -121,15 +121,15 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
 
     private void pegarReferencias() {
         tvTitulo = (TextView) findViewById(R.id.tvTitulo1);
-        tvDescricao = (TextView) findViewById(R.id.tvDescricao2);
+        tvDescricao = (TextView) findViewById(R.id.tvDescricao);
         tvEndereco = (TextView) findViewById(R.id.tvEndereco2);
         tvHorario = (TextView) findViewById(R.id.tvHorario2);
         tvTelefone = (TextView) findViewById(R.id.tvTelefone2);
         tvSite = (TextView) findViewById(R.id.tvSite2);
-        ratingBarAvalie = (RatingBar) findViewById(R.id.ratingBar2);
+        ratingBarAvalie = (RatingBar) findViewById(R.id.ratingBar);
         checkBoxFavorito = (CheckBox) findViewById(R.id.cbFav);
         checkBoxFavorito.setOnClickListener(this);
-        imagem = (ImageView) findViewById(R.id.img1);
+        imagem = (ImageView) findViewById(R.id.imgEstabelecimento);
         txtInputEditTextAnotacao = (TextInputEditText) findViewById(R.id.txtInputEditTextAnotacao);
     }
 

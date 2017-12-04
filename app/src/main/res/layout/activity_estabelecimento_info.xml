@@ -23,7 +23,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/img1"
+            android:id="@+id/imgEstabelecimento"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@id/tvTitulo1"
@@ -44,7 +44,7 @@
             android:layout_marginTop="10dp">
 
             <TextView
-                android:id="@+id/tvDescricao2"
+                android:id="@+id/tvDescricao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -55,7 +55,7 @@
                 android:id="@+id/tvEndereco"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvDescricao2"
+                android:layout_below="@id/tvDescricao"
                 android:layout_marginTop="10dp"
                 android:text="Endereço: "
                 android:textSize="16dp"
@@ -65,7 +65,7 @@
                 android:id="@+id/tvEndereco2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvDescricao2"
+                android:layout_below="@+id/tvDescricao"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvEndereco"
                 android:text="@null"
@@ -143,7 +143,7 @@
                 android:textStyle="bold" />
 
             <RatingBar
-                android:id="@+id/ratingBar2"
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvSite"
@@ -154,7 +154,7 @@
                 android:id="@+id/tvAddFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ratingBar2"
+                android:layout_below="@+id/ratingBar"
                 android:layout_marginTop="10dp"
                 android:text="Adicionar aos Favoritos:"
                 android:textSize="16dp"
@@ -164,7 +164,7 @@
                 android:id="@+id/cbFav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ratingBar2"
+                android:layout_below="@+id/ratingBar"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvAddFav" />
 
@@ -192,7 +192,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvMaps"
-                android:layout_centerHorizontal="true"
                 android:text="Minha Opinião:"
                 android:textSize="16dp"
                 android:textStyle="bold" />

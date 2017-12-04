@@ -15,8 +15,6 @@ import android.widget.TextView;
 import com.jaime.jaime.R;
 import com.jaime.jaime.domain.Estabelecimento;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 public class EstabelecimentoAdapter extends BaseAdapter {
@@ -52,32 +50,62 @@ public class EstabelecimentoAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Passo 1
+        View view;
+        ViewHolder viewHolder;
+
+
+
+        if (convertView == null) {
+            // Passo 2 Criar View nova
+            view = LayoutInflater.from(context).inflate(R.layout.estabelecimento_item, null);
+            viewHolder = new ViewHolder(view);
+            view.setTag(viewHolder);
+        } else {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
+        //Pega o estabelecimento selecionado
         Estabelecimento estabelecimento = estabelecimentos.get(position);
 
-        // Passo 2 Criar View nova
-        convertView = LayoutInflater.from(context).inflate(R.layout.estabelecimento_item, null);
 
+        /*imgEstabelecimento = (ImageView) view.findViewById(R.id.img);
+        ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
+        tvDescricao = (TextView) view.findViewById(R.id.tvDescricao);
+        tvTotalVotos = (TextView) view.findViewById(R.id.tvTotalVotos);
+        tvNome = (TextView) view.findViewById(R.id.tvNome);*/
 
-        ImageView imgImagem = (ImageView) convertView.findViewById(R.id.img);
-        RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.ratingBar);
-        TextView tvDescricao = (TextView) convertView.findViewById(R.id.tvDescricao);
-        TextView tvTotalVotos = (TextView) convertView.findViewById(R.id.tvTotalVotos);
-        TextView tvNome = (TextView) convertView.findViewById(R.id.tvNome);
+        //Preenche os campos de acordo com o objeto
+        viewHolder.tvNome.setText(estabelecimento.getNome());
+        viewHolder.tvTotalVotos.setText("(" + estabelecimento.getTotalVotos() + ")");
+        viewHolder.tvDescricao.setText(estabelecimento.getDescricao());
+        viewHolder.ratingBar.setMax(5);
+        viewHolder.ratingBar.setRating(estabelecimento.getNotaMedia());
 
-        //Passo 3
+        //Imagem
         Resources res = context.getResources();
-        tvNome.setText(estabelecimento.getNome());
         TypedArray imagens = res.obtainTypedArray(R.array.imagens);
-        imgImagem.setImageDrawable(
-                imagens.getDrawable(estabelecimento.getImagem()));
-        ratingBar.setMax(5);
-        ratingBar.setRating(estabelecimento.getNotaMedia());
-        tvDescricao.setText(estabelecimento.getDescricao());
-        tvTotalVotos.setText("(" + estabelecimento.getTotalVotos() + ")");
+        Log.i("Leandro", estabelecimento.getImagem() + "");
+        viewHolder.imgEstabelecimento.setImageDrawable(imagens.getDrawable(estabelecimento.getImagem()));
+
 
         // Passo 4
-        return convertView;
+        return view;
 
+    }
+
+    public class ViewHolder {
+        final ImageView imgEstabelecimento;
+        final RatingBar ratingBar;
+        final TextView tvDescricao;
+        final TextView tvTotalVotos;
+        final TextView tvNome;
+
+        public ViewHolder(View view){
+            tvNome = view.findViewById(R.id.tvNome);
+            imgEstabelecimento = view.findViewById(R.id.imgEstabelecimento);
+            ratingBar = view.findViewById(R.id.ratingBar);
+            tvDescricao = view.findViewById(R.id.tvDescricao);
+            tvTotalVotos = view.findViewById(R.id.tvTotalVotos);
+        }
     }
 }

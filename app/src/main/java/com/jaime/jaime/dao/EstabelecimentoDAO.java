@@ -16,7 +16,7 @@ import java.util.List;
 
 public class EstabelecimentoDAO extends SQLiteOpenHelper {
     //Toda vez que mudar o banco aumenta um nesse atributo.
-    private static final int VERSAO = 32;
+    private static final int VERSAO = 33;
 
 
     @Override
