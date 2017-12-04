@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Jaime</string>
+    <string name="hint_anotacao">Anote aqui sobre esse local.</string>
 </resources>

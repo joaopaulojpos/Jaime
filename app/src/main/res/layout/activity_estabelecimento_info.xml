@@ -187,7 +187,33 @@
                 android:text="Ver no Mapa"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tvDescricaoUsuario1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMaps"
+                android:layout_centerHorizontal="true"
+                android:text="Minha Opinião:"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/txtInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMaps"
+                android:layout_margin="20dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/txtInputEditTextAnotacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_anotacao"
+                    android:textSize="16dp" />
+            </android.support.design.widget.TextInputLayout>
+
         </RelativeLayout>
     </ScrollView>
+
 
 </RelativeLayout>

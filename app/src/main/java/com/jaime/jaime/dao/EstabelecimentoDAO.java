@@ -16,7 +16,7 @@ import java.util.List;
 
 public class EstabelecimentoDAO extends SQLiteOpenHelper {
     //Toda vez que mudar o banco aumenta um nesse atributo.
-    private static final int VERSAO = 28;
+    private static final int VERSAO = 31;
 
 
     @Override
@@ -39,7 +39,8 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
                 "longitude LONG, " +
                 "imagem integer, " +
                 "localPublico integer, " +
-                "isFavorito integer);";
+                "isFavorito integer, " +
+                "anotacao TEXT);";
         sqLiteDatabase.execSQL(sql);
     }
 
@@ -103,6 +104,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         cv.put("totalVotos", estabelecimento.getTotalVotos());
         cv.put("localPublico", estabelecimento.getLocalPublico());
         cv.put("isFavorito", estabelecimento.getIsFavorito());
+        cv.put("anotacao", estabelecimento.getAnotacao());
         return cv;
     }
 
@@ -147,6 +149,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
             estabelecimento.setIsFavorito(cursor.getInt(cursor.getColumnIndex("isFavorito")));
+            estabelecimento.setAnotacao(cursor.getString(cursor.getColumnIndex("anotacao")));
 
             estabelecimentos.add(estabelecimento);
         }
@@ -177,6 +180,7 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
             estabelecimento.setIsFavorito(cursor.getInt(cursor.getColumnIndex("isFavorito")));
+            estabelecimento.setAnotacao(cursor.getString(cursor.getColumnIndex("anotacao")));
         }
         return estabelecimento;
     }

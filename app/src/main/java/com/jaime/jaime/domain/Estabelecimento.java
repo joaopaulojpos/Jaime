@@ -9,6 +9,7 @@ public class Estabelecimento implements Serializable{
     private String telefone;
     private String site;
     private String descricao;
+    private String anotacao;
     private String endereco;
     private String categoria;
     private String horarioAbre;
@@ -25,12 +26,13 @@ public class Estabelecimento implements Serializable{
     public Estabelecimento() {
     }
 
-    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico, Integer isFavorito) {
+    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String anotacao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico, Integer isFavorito) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
         this.site = site;
         this.descricao = descricao;
+        this.anotacao = anotacao;
         this.endereco = endereco;
         this.categoria = categoria;
         this.horarioAbre = horarioAbre;
@@ -53,6 +55,7 @@ public class Estabelecimento implements Serializable{
                 ", telefone='" + telefone + '\'' +
                 ", site='" + site + '\'' +
                 ", descricao='" + descricao + '\'' +
+                ", anotacao='" + anotacao + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", categoria='" + categoria + '\'' +
                 ", horarioAbre='" + horarioAbre + '\'' +
@@ -81,6 +84,8 @@ public class Estabelecimento implements Serializable{
             return false;
         if (site != null ? !site.equals(that.site) : that.site != null) return false;
         if (descricao != null ? !descricao.equals(that.descricao) : that.descricao != null)
+            return false;
+        if (anotacao != null ? !anotacao.equals(that.anotacao) : that.anotacao != null)
             return false;
         if (endereco != null ? !endereco.equals(that.endereco) : that.endereco != null)
             return false;
@@ -112,6 +117,7 @@ public class Estabelecimento implements Serializable{
         result = 31 * result + (telefone != null ? telefone.hashCode() : 0);
         result = 31 * result + (site != null ? site.hashCode() : 0);
         result = 31 * result + (descricao != null ? descricao.hashCode() : 0);
+        result = 31 * result + (anotacao != null ? anotacao.hashCode() : 0);
         result = 31 * result + (endereco != null ? endereco.hashCode() : 0);
         result = 31 * result + (categoria != null ? categoria.hashCode() : 0);
         result = 31 * result + (horarioAbre != null ? horarioAbre.hashCode() : 0);
@@ -165,6 +171,14 @@ public class Estabelecimento implements Serializable{
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getAnotacao() {
+        return anotacao;
+    }
+
+    public void setAnotacao(String anotacao) {
+        this.anotacao = anotacao;
     }
 
     public String getEndereco() {

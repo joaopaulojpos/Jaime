@@ -3,9 +3,9 @@ package com.jaime.jaime.activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -32,17 +32,17 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
     private RatingBar ratingBarAvalie;
     private CheckBox checkBoxFavorito;
     private ImageView imagem;
+    private TextInputEditText txtInputEditTextAnotacao;
+    private Float nota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_estabelecimento_info);
-
         pegarExtras();
         pegarReferencias();
         setarCamposDaTela();
-
-        avaliarEstabelecimento();
+        pegarRating();
     }
 
 
@@ -51,14 +51,45 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
         super.onResume();
     }
 
-    private void avaliarEstabelecimento() {
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        avaliarSQLite();
+
+        favoritarSQLite();
+
+        anotacaoSQLite();
+    }
+
+    private void anotacaoSQLite() {
+        estabelecimento.setAnotacao(txtInputEditTextAnotacao.getText().toString());
+        EstabelecimentoDAO dao = new EstabelecimentoDAO(this);
+        dao.atualizarEstabelecimento(estabelecimento);
+    }
+
+    private void favoritarSQLite() {
+        if (checkBoxFavorito.isChecked()) {
+            adicionarAosFavoritos(estabelecimento);
+        } else {
+            removerDosFavoritos(estabelecimento);
+        }
+    }
+
+    private void avaliarSQLite() {
+        if (nota != null) {
+            EstabelecimentoDAO dao = new EstabelecimentoDAO(EstabelecimentoInfoActivity.this);
+            estabelecimento.setNota(nota);
+            dao.atualizarEstabelecimento(estabelecimento);
+        }
+
+    }
+
+    private void pegarRating() {
         ratingBarAvalie.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                EstabelecimentoDAO dao = new EstabelecimentoDAO(EstabelecimentoInfoActivity.this);
-                estabelecimento.setNota(rating);
-                dao.atualizarEstabelecimento(estabelecimento);
-                ratingBarAvalie.setRating(rating);
+                nota = rating;
             }
         });
     }
@@ -71,6 +102,10 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
         tvSite.setText(estabelecimento.getSite());
         tvTelefone.setText(estabelecimento.getTelefone());
         ratingBarAvalie.setRating(estabelecimento.getNota());
+        if (estabelecimento.getAnotacao() != null) {
+            txtInputEditTextAnotacao.setText(estabelecimento.getAnotacao());
+        }
+
 
         //Imagem
         Resources res = this.getResources();
@@ -95,6 +130,7 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
         checkBoxFavorito = (CheckBox) findViewById(R.id.cbFav);
         checkBoxFavorito.setOnClickListener(this);
         imagem = (ImageView) findViewById(R.id.img1);
+        txtInputEditTextAnotacao = (TextInputEditText) findViewById(R.id.txtInputEditTextAnotacao);
     }
 
 
@@ -110,11 +146,7 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
 
     @Override
     public void onClick(View v) {
-        if (checkBoxFavorito.isChecked()) {
-            adicionarAosFavoritos(estabelecimento);
-        } else {
-            removerDosFavoritos(estabelecimento);
-        }
+
     }
 
     private void removerDosFavoritos(Estabelecimento estabelecimento) {
