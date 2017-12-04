@@ -406,10 +406,10 @@ public class DarCargaNoBanco {
         r1.setEndereco("Rua Saldanha Marinho, 645 - Ipsep, Recife - PE, 51190-660");
         r1.setTelefone("(81) 3339-0012");
         r1.setSite("https://www.facebook.com/seulunafanpage/?pnref=lhc");
-        r1.setCategoria("");
-        r1.setImagem(0); // falta
-        r1.setNotaMedia(5f);
-        r1.setTotalVotos(0); // falta
+        r1.setCategoria(EstabelecimentosEnum.RESTAURANTE.toString());
+        r1.setImagem(5);
+        r1.setNotaMedia(4f);
+        r1.setTotalVotos(30); // falta
         r1.setHorarioAbre("11:00");
         r1.setHorarioFecha("17:00");
         r1.setLatitude(0000L); // falta
@@ -424,14 +424,17 @@ public class DarCargaNoBanco {
         r2.setEndereco("R. Félix Pachêco, 261 - Ipsep, Recife - PE, 51190-060");
         r2.setTelefone("");
         r2.setSite("");
-        r2.setCategoria("");
-        r2.setImagem(0);
+        r2.setCategoria(EstabelecimentosEnum.RESTAURANTE.toString());
+        r2.setImagem(6);
         r2.setNotaMedia(0f);
         r2.setTotalVotos(0);
         r2.setHorarioAbre("11:00");
         r2.setHorarioFecha("23:00");
         r2.setLatitude(0000L);
         r2.setLongitude(000L);
+
+        dao.salvarEstabelecimento(r1);
+        dao.salvarEstabelecimento(r2);
     }
 
     private void cargaShopping(Context context) {

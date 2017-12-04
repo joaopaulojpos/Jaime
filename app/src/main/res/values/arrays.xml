@@ -5,5 +5,7 @@
         <item>@drawable/teatro_rio_mar</item>
         <item>@drawable/shopping_boa_vista</item>
         <item>@drawable/shopping_recife</item>
+        <item>@drawable/seu_luna_restaurante_e_bar</item>
+        <item>@drawable/restaurante_portal_do_picui</item>
     </array>
 </resources>
