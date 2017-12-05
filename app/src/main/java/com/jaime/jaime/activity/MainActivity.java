@@ -1,13 +1,11 @@
 package com.jaime.jaime.activity;
 
+
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-
 import com.jaime.jaime.R;
 
 public class MainActivity extends AppCompatActivity{
@@ -38,5 +36,4 @@ public class MainActivity extends AppCompatActivity{
             }
         }, 5000);
     }
-
 }
