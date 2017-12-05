@@ -18,8 +18,8 @@ public class TesteMapsActivity extends FragmentActivity implements OnMapReadyCal
 
     private GoogleMap mMap;
     private Bundle extrasPaginaAnterior;
-    private Long latitude;
-    private Long longitude;
+    private Double latitude;
+    private Double longitude;
     private String nomeLocal;
 
     @Override
@@ -36,8 +36,8 @@ public class TesteMapsActivity extends FragmentActivity implements OnMapReadyCal
     private void pegarExtras() {
         extrasPaginaAnterior = getIntent().getExtras();
         //pega a latitude e longitude que foi escolhida na página anterior
-        latitude = extrasPaginaAnterior.getLong("latitude");
-        longitude = extrasPaginaAnterior.getLong("longitude");
+        latitude = extrasPaginaAnterior.getDouble("latitude");
+        longitude = extrasPaginaAnterior.getDouble("longitude");
         nomeLocal = extrasPaginaAnterior.getString("nomeLocal");
     }
 
@@ -59,7 +59,7 @@ public class TesteMapsActivity extends FragmentActivity implements OnMapReadyCal
         LatLng local = new LatLng(latitude, longitude);
         mMap.addMarker(new MarkerOptions().position(local).title(nomeLocal));
 
-        float zoom = 8.0f; //This goes up to 21
+        float zoom = 16.0f; //This goes up to 21
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(local, zoom));
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 
 public class EstabelecimentoDAO extends SQLiteOpenHelper {
     //Toda vez que mudar o banco aumenta um nesse atributo.
-    private static final int VERSAO = 36;
+    private static final int VERSAO = 39;
 
 
     @Override
@@ -35,8 +35,8 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
                 "nota REAL, " +
                 "notaMedia REAL, " +
                 "totalVotos integer, " +
-                "latitude LONG, " +
-                "longitude LONG, " +
+                "latitude REAL, " +
+                "longitude REAL, " +
                 "imagem integer, " +
                 "localPublico integer, " +
                 "isFavorito integer, " +
@@ -145,8 +145,8 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setHorarioAbre(cursor.getString(cursor.getColumnIndex("horarioAbre")));
             estabelecimento.setHorarioFecha(cursor.getString(cursor.getColumnIndex("horarioFecha")));
             estabelecimento.setCategoria(cursor.getString(cursor.getColumnIndex("categoria")));
-            estabelecimento.setLatitude(cursor.getLong(cursor.getColumnIndex("latitude")));
-            estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
+            estabelecimento.setLatitude(cursor.getDouble(cursor.getColumnIndex("latitude")));
+            estabelecimento.setLongitude(cursor.getDouble(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
             estabelecimento.setIsFavorito(cursor.getInt(cursor.getColumnIndex("isFavorito")));
             estabelecimento.setAnotacao(cursor.getString(cursor.getColumnIndex("anotacao")));
@@ -176,8 +176,8 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
             estabelecimento.setHorarioAbre(cursor.getString(cursor.getColumnIndex("horarioAbre")));
             estabelecimento.setHorarioFecha(cursor.getString(cursor.getColumnIndex("horarioFecha")));
             estabelecimento.setCategoria(cursor.getString(cursor.getColumnIndex("categoria")));
-            estabelecimento.setLatitude(cursor.getLong(cursor.getColumnIndex("latitude")));
-            estabelecimento.setLongitude(cursor.getLong(cursor.getColumnIndex("longitude")));
+            estabelecimento.setLatitude(cursor.getDouble(cursor.getColumnIndex("latitude")));
+            estabelecimento.setLongitude(cursor.getDouble(cursor.getColumnIndex("longitude")));
             estabelecimento.setLocalPublico(cursor.getInt(cursor.getColumnIndex("localPublico")));
             estabelecimento.setIsFavorito(cursor.getInt(cursor.getColumnIndex("isFavorito")));
             estabelecimento.setAnotacao(cursor.getString(cursor.getColumnIndex("anotacao")));

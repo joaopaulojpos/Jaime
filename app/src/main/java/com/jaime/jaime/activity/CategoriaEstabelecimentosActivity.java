@@ -20,6 +20,7 @@ import com.jaime.jaime.R;
 import com.jaime.jaime.apiclima.Clima;
 import com.jaime.jaime.apiclima.ClimaResposta;
 import com.jaime.jaime.apiclima.ClimaapiService;
+import com.jaime.jaime.teste.TesteActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -182,7 +183,7 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
                 intent.putExtra("Categoria", "Shopping");
                 break;
             case R.id.btnLeandro:
-                intent = new Intent(CategoriaEstabelecimentosActivity.this, TesteMapsActivity.class);
+                intent = new Intent(CategoriaEstabelecimentosActivity.this, TesteActivity.class);
                 break;
 
         }

@@ -80,8 +80,8 @@ public class DarCargaNoBanco {
         i1.setTotalVotos(0); // falta
         i1.setHorarioAbre("08:00");
         i1.setHorarioFecha("17:00");
-        i1.setLatitude(0000L); // falta
-        i1.setLongitude(000L); // falta
+        i1.setLatitude(0.0); // falta
+        i1.setLongitude(0.0); // falta
 
         Estabelecimento i2 = new Estabelecimento();
         i2.setNome("Concatedral de São Pedro dos Clérigos");
@@ -99,8 +99,8 @@ public class DarCargaNoBanco {
         i2.setTotalVotos(0); // falta
         i2.setHorarioAbre("");
         i2.setHorarioFecha("");
-        i2.setLatitude(0000L); // falta
-        i2.setLongitude(000L); // falta
+        i2.setLatitude(0.0); // falta
+        i2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(i1);
         dao.salvarEstabelecimento(i2);
@@ -124,8 +124,8 @@ public class DarCargaNoBanco {
         p1.setTotalVotos(0); // falta
         p1.setHorarioAbre("");
         p1.setHorarioFecha("");
-        p1.setLatitude(0000L); // falta
-        p1.setLongitude(000L); // falta
+        p1.setLatitude(0.0); // falta
+        p1.setLongitude(0.0); // falta
 
         Estabelecimento p2 = new Estabelecimento();
         p2.setNome("Praia do Pina");
@@ -141,8 +141,8 @@ public class DarCargaNoBanco {
         p2.setTotalVotos(0); // falta
         p2.setHorarioAbre("");
         p2.setHorarioFecha("");
-        p2.setLatitude(0000L); // falta
-        p2.setLongitude(000L); // falta
+        p2.setLatitude(0.0); // falta
+        p2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(p1);
         dao.salvarEstabelecimento(p2);
@@ -165,8 +165,8 @@ public class DarCargaNoBanco {
         a1.setTotalVotos(0); // falta
         a1.setHorarioAbre("05:00");
         a1.setHorarioFecha("23:00");
-        a1.setLatitude(0000L); // falta
-        a1.setLongitude(000L); // falta
+        a1.setLatitude(0.0); // falta
+        a1.setLongitude(0.0); // falta
 
         Estabelecimento a2 = new Estabelecimento();
         a2.setNome("Yes Fit Academia");
@@ -182,8 +182,8 @@ public class DarCargaNoBanco {
         a2.setTotalVotos(0); // falta
         a2.setHorarioAbre("05:00");
         a2.setHorarioFecha("23:00");
-        a2.setLatitude(0000L); // falta
-        a2.setLongitude(000L); // falta
+        a2.setLatitude(0.0); // falta
+        a2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(a1);
         dao.salvarEstabelecimento(a2);
@@ -206,8 +206,8 @@ public class DarCargaNoBanco {
         p1.setTotalVotos(0); // falta
         p1.setHorarioAbre("");
         p1.setHorarioFecha("");
-        p1.setLatitude(0000L); // falta
-        p1.setLongitude(000L); // falta
+        p1.setLatitude(0.0); // falta
+        p1.setLongitude(0.0); // falta
 
         Estabelecimento p2 = new Estabelecimento();
         p2.setNome("");
@@ -223,8 +223,8 @@ public class DarCargaNoBanco {
         p2.setTotalVotos(0); // falta
         p2.setHorarioAbre("");
         p2.setHorarioFecha("");
-        p2.setLatitude(0000L); // falta
-        p2.setLongitude(000L); // falta
+        p2.setLatitude(0.0); // falta
+        p2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(p1);
         dao.salvarEstabelecimento(p2);
@@ -247,8 +247,8 @@ public class DarCargaNoBanco {
         e1.setTotalVotos(0); // falta
         e1.setHorarioAbre("");
         e1.setHorarioFecha("");
-        e1.setLatitude(0000L); // falta
-        e1.setLongitude(000L); // falta
+        e1.setLatitude(0.0); // falta
+        e1.setLongitude(0.0); // falta
 
         Estabelecimento e2 = new Estabelecimento();
         e2.setNome("");
@@ -264,8 +264,8 @@ public class DarCargaNoBanco {
         e2.setTotalVotos(0); // falta
         e2.setHorarioAbre("");
         e2.setHorarioFecha("");
-        e2.setLatitude(0000L); // falta
-        e2.setLongitude(000L); // falta
+        e2.setLatitude(0.0); // falta
+        e2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(e1);
         dao.salvarEstabelecimento(e2);
@@ -288,8 +288,8 @@ public class DarCargaNoBanco {
         p1.setTotalVotos(0); // falta
         p1.setHorarioAbre("");
         p1.setHorarioFecha("");
-        p1.setLatitude(0000L); // falta
-        p1.setLongitude(000L); // falta
+        p1.setLatitude(0.0); // falta
+        p1.setLongitude(0.0); // falta
 
         Estabelecimento p2 = new Estabelecimento();
         p2.setNome("");
@@ -305,8 +305,8 @@ public class DarCargaNoBanco {
         p2.setTotalVotos(0); // falta
         p2.setHorarioAbre("");
         p2.setHorarioFecha("");
-        p2.setLatitude(0000L); // falta
-        p2.setLongitude(000L); // falta
+        p2.setLatitude(0.0); // falta
+        p2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(p1);
         dao.salvarEstabelecimento(p2);
@@ -330,8 +330,8 @@ public class DarCargaNoBanco {
         m1.setTotalVotos(0); // falta
         m1.setHorarioAbre("");
         m1.setHorarioFecha("");
-        m1.setLatitude(0000L); // falta
-        m1.setLongitude(000L); // falta
+        m1.setLatitude(0.0); // falta
+        m1.setLongitude(0.0); // falta
 
         Estabelecimento m2 = new Estabelecimento();
         m2.setNome("");
@@ -347,8 +347,8 @@ public class DarCargaNoBanco {
         m2.setTotalVotos(0); // falta
         m2.setHorarioAbre("");
         m2.setHorarioFecha("");
-        m2.setLatitude(0000L); // falta
-        m2.setLongitude(000L); // falta
+        m2.setLatitude(0.0); // falta
+        m2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(m1);
         dao.salvarEstabelecimento(m2);
@@ -371,8 +371,8 @@ public class DarCargaNoBanco {
         h1.setTotalVotos(0); // falta
         h1.setHorarioAbre("");
         h1.setHorarioFecha("");
-        h1.setLatitude(0000L); // falta
-        h1.setLongitude(000L); // falta
+        h1.setLatitude(0.0); // falta
+        h1.setLongitude(0.0); // falta
 
         Estabelecimento h2 = new Estabelecimento();
         h2.setNome("");
@@ -388,8 +388,8 @@ public class DarCargaNoBanco {
         h2.setTotalVotos(0); // falta
         h2.setHorarioAbre("");
         h2.setHorarioFecha("");
-        h2.setLatitude(0000L); // falta
-        h2.setLongitude(000L); // falta
+        h2.setLatitude(0.0); // falta
+        h2.setLongitude(0.0); // falta
 
         dao.salvarEstabelecimento(h1);
         dao.salvarEstabelecimento(h2);
@@ -413,8 +413,8 @@ public class DarCargaNoBanco {
         r1.setTotalVotos(30); // falta
         r1.setHorarioAbre("11:00");
         r1.setHorarioFecha("17:00");
-        r1.setLatitude(0000L); // falta
-        r1.setLongitude(000L); // falta
+        r1.setLatitude(0.0); // falta
+        r1.setLongitude(0.0); // falta
 
         Estabelecimento r2 = new Estabelecimento();
         r2.setNome("Restaurante Portal do Picuí");
@@ -431,8 +431,8 @@ public class DarCargaNoBanco {
         r2.setTotalVotos(0);
         r2.setHorarioAbre("11:00");
         r2.setHorarioFecha("23:00");
-        r2.setLatitude(0000L);
-        r2.setLongitude(000L);
+        r2.setLatitude(0.0);
+        r2.setLongitude(0.0);
 
         dao.salvarEstabelecimento(r1);
         dao.salvarEstabelecimento(r2);
@@ -457,8 +457,9 @@ public class DarCargaNoBanco {
         s1.setTotalVotos(50);
         s1.setHorarioAbre("09:00");
         s1.setHorarioFecha("22:00");
-        s1.setLatitude((long) -8.1149622);
-        s1.setLongitude((long) -34.9065044);
+        s1.setLatitude(-8.119593);
+        s1.setLongitude(-34.904751);
+        Log.i("Leandro", ">>>>>DarCargaNobanco<<<<<\n" + s1.getNome() + "\nLatitude: " + s1.getLatitude() + "\nLongitude: " + s1.getLongitude());
 
         Estabelecimento s2 = new Estabelecimento();
         s2.setNome("Shopping Boa Vista");
@@ -474,8 +475,8 @@ public class DarCargaNoBanco {
         s2.setTotalVotos(875);
         s2.setHorarioAbre("09:00");
         s2.setHorarioFecha("21:00");
-        s2.setLatitude(545456L);
-        s2.setLongitude(8488L);
+        s2.setLatitude(0.0);
+        s2.setLongitude(0.0);
 
         dao.salvarEstabelecimento(s1);
         dao.salvarEstabelecimento(s2);
@@ -502,8 +503,8 @@ public class DarCargaNoBanco {
         t1.setTotalVotos(248);
         t1.setHorarioAbre("08:00");
         t1.setHorarioFecha("22:00");
-        t1.setLatitude(45654L);
-        t1.setLongitude(5555L);
+        t1.setLatitude(0.0);
+        t1.setLongitude(0.0);
 
         Estabelecimento t2 = new Estabelecimento();
         t2.setNome("Teatro RioMar Recife");
@@ -521,8 +522,8 @@ public class DarCargaNoBanco {
         t2.setTotalVotos(105);
         t2.setHorarioAbre("10:00");
         t2.setHorarioFecha("20:00");
-        t2.setLatitude(45654L);
-        t2.setLongitude(84849L);
+        t2.setLatitude(0.0);
+        t2.setLongitude(0.0);
 
         dao.salvarEstabelecimento(t1);
         dao.salvarEstabelecimento(t2);

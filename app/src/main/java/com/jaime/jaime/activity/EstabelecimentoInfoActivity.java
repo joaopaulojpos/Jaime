@@ -172,8 +172,8 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
     }
 
     private void abrirNoMapa(Intent intent) {
-        intent.putExtra("latitude", new Long(estabelecimento.getLatitude()));
-        intent.putExtra("longitude", new Long(estabelecimento.getLongitude()));
+        intent.putExtra("latitude", new Double(estabelecimento.getLatitude()));
+        intent.putExtra("longitude", new Double(estabelecimento.getLongitude()));
         intent.putExtra("nomeLocal", estabelecimento.getNome());
         startActivity(intent);
     }

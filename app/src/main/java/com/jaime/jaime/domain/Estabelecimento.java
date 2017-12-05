@@ -17,8 +17,8 @@ public class Estabelecimento implements Serializable{
     private Float nota;
     private Float notaMedia;
     private Integer totalVotos;
-    private Long latitude;
-    private Long longitude;
+    private Double latitude;
+    private Double longitude;
     private Integer imagem;
     private Integer localPublico;
     private Integer isFavorito;
@@ -26,7 +26,7 @@ public class Estabelecimento implements Serializable{
     public Estabelecimento() {
     }
 
-    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String anotacao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Long latitude, Long longitude, Integer imagem, Integer localPublico, Integer isFavorito) {
+    public Estabelecimento(int id, String nome, String telefone, String site, String descricao, String anotacao, String endereco, String categoria, String horarioAbre, String horarioFecha, Float nota, Float notaMedia, Integer totalVotos, Double latitude, Double longitude, Integer imagem, Integer localPublico, Integer isFavorito) {
         this.id = id;
         this.nome = nome;
         this.telefone = telefone;
@@ -237,19 +237,19 @@ public class Estabelecimento implements Serializable{
         this.totalVotos = totalVotos;
     }
 
-    public Long getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(Long latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public Long getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(Long longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
