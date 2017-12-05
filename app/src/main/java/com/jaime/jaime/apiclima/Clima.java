@@ -1,44 +1,29 @@
 package com.jaime.jaime.apiclima;
 
-import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by Dell-PC on 29/11/2017.
+ * Created by Dell-PC on 04/12/2017.
  */
 
 public class Clima {
-
-    @SerializedName("description")
+    private String date;
     private String description;
+    private String currently;
+    private String condition_slug;
 
-    @SerializedName("condition")
-    private String condition;
-
-    @SerializedName("sprites")
-    private List<Sprite> sprites = new ArrayList<>();
-
-    @SerializedName("types")
-    private List<ClimaType> climaTypes = new ArrayList<>();
-
-    public Clima(String description, String condition, List<Sprite> sprites, List<ClimaType> climaTypes) {
-        this.description = description;
-        this.condition = condition;
-        this.sprites = sprites;
-        this.climaTypes = climaTypes;
+    public String getCondition_slug() {
+        return condition_slug;
     }
 
-    public String climaTypesToString() {
-        String types = "";
-        for (int i = 0; i < climaTypes.size(); i++) {
-            if(i > 0)
-                types += ", ";
-            types += climaTypes.get(i).getDescription();
-        }
+    public void setCondition_slug(String condition_slug) {
+        this.condition_slug = condition_slug;
+    }
 
-        return types;
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getDescription() {
@@ -49,57 +34,11 @@ public class Clima {
         this.description = description;
     }
 
-    public String getCondition() {
-        return condition;
+    public String getCurrently() {
+        return currently;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
+    public void setCurrently(String currently) {
+        this.currently = currently;
     }
-
-    public List<Sprite> getSprites() {
-        return sprites;
-    }
-
-    public void setSprites(List<Sprite> sprites) {
-        this.sprites = sprites;
-    }
-
-    public List<ClimaType> getClimaTypes() {
-        return climaTypes;
-    }
-
-    public void setClimaTypes(List<ClimaType> climaTypes) {
-        this.climaTypes = climaTypes;
-    }
-
-    /**
-    private String description;
-    private String condition;
-
-    public Clima(){
-
-    }
-
-    public Clima(String description, String condition) {
-        this.description = description;
-        this.condition = condition;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-     */
 }
