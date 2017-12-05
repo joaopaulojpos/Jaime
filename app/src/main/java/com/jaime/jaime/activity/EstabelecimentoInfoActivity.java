@@ -6,12 +6,15 @@ import android.content.res.TypedArray;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.jaime.jaime.MapsTeste.TesteMapsActivity;
 import com.jaime.jaime.R;
 import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
@@ -34,6 +37,8 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
     private ImageView imagem;
     private TextInputEditText txtInputEditTextAnotacao;
     private Float nota;
+    private TextView tvVerLocalizacao;
+    private ImageView imgLogoMaps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +46,15 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_estabelecimento_info);
         pegarExtras();
         pegarReferencias();
+        listenar();
         setarCamposDaTela();
         pegarRating();
+    }
+
+    private void listenar() {
+        tvVerLocalizacao.setOnClickListener(this);
+        checkBoxFavorito.setOnClickListener(this);
+        imgLogoMaps.setOnClickListener(this);
     }
 
 
@@ -128,9 +140,11 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
         tvSite = (TextView) findViewById(R.id.tvSite2);
         ratingBarAvalie = (RatingBar) findViewById(R.id.ratingBar);
         checkBoxFavorito = (CheckBox) findViewById(R.id.cbFav);
-        checkBoxFavorito.setOnClickListener(this);
+        imgLogoMaps = (ImageView) findViewById(R.id.imgLogoMaps);
+
         imagem = (ImageView) findViewById(R.id.imgEstabelecimento);
         txtInputEditTextAnotacao = (TextInputEditText) findViewById(R.id.txtInputEditTextAnotacao);
+        tvVerLocalizacao = (TextView) findViewById(R.id.tvMaps);
     }
 
 
@@ -146,7 +160,22 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity implements Vi
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent(EstabelecimentoInfoActivity.this, TesteMapsActivity.class);
+        switch (v.getId()) {
+            case R.id.tvMaps:
+                abrirNoMapa(intent);
+                break;
+            case R.id.imgLogoMaps:
+                abrirNoMapa(intent);
+                break;
+        }
+    }
 
+    private void abrirNoMapa(Intent intent) {
+        intent.putExtra("latitude", new Long(estabelecimento.getLatitude()));
+        intent.putExtra("longitude", new Long(estabelecimento.getLongitude()));
+        intent.putExtra("nomeLocal", estabelecimento.getNome());
+        startActivity(intent);
     }
 
     private void removerDosFavoritos(Estabelecimento estabelecimento) {

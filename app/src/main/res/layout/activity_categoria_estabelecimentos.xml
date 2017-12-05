@@ -60,10 +60,20 @@
                 android:id="@+id/btnShopping"
                 android:layout_width="250dp"
                 android:layout_height="100dp"
-                android:layout_below="@id/btnBar"
+                android:layout_below="@id/btnTeatro"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:text="Shopping"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btnLeandro"
+                android:layout_width="250dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/btnShopping"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Teste Leandro"
                 android:textSize="20dp" />
 
         </RelativeLayout>

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.jaime.jaime.MapsTeste.TesteMapsActivity;
 import com.jaime.jaime.R;
 import com.jaime.jaime.apiclima.Clima;
 import com.jaime.jaime.apiclima.ClimaResposta;
@@ -41,6 +42,7 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
 
     private static final String TAG = "CLIMEX";
     private Retrofit retrofit;
+    private Button btnLeandro;
 
 
     @Override
@@ -179,6 +181,10 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
             case R.id.btnShopping:
                 intent.putExtra("Categoria", "Shopping");
                 break;
+            case R.id.btnLeandro:
+                intent = new Intent(CategoriaEstabelecimentosActivity.this, TesteMapsActivity.class);
+                break;
+
         }
         startActivity(intent);
     }
@@ -189,6 +195,7 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         btnBar = findViewById(R.id.btnBar);
         btnTeatro = findViewById(R.id.btnTeatro);
         btnShopping = findViewById(R.id.btnShopping);
+        btnLeandro = (Button) findViewById(R.id.btnLeandro);
     }
 
     public void listenarBotoes() {
@@ -196,5 +203,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         btnBar.setOnClickListener(this);
         btnTeatro.setOnClickListener(this);
         btnShopping.setOnClickListener(this);
+        btnLeandro.setOnClickListener(this);
     }
 }

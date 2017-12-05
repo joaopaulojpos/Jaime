@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Jaime</string>
     <string name="hint_anotacao">Anote aqui sobre esse local.</string>
+    <string name="title_activity_teste_maps">Map</string>
 </resources>

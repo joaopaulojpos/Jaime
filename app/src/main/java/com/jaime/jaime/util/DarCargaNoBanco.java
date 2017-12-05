@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
 
 public class DarCargaNoBanco {
 
@@ -456,8 +457,8 @@ public class DarCargaNoBanco {
         s1.setTotalVotos(50);
         s1.setHorarioAbre("09:00");
         s1.setHorarioFecha("22:00");
-        s1.setLatitude(7878L);
-        s1.setLongitude(456L);
+        s1.setLatitude((long) -8.1149622);
+        s1.setLongitude((long) -34.9065044);
 
         Estabelecimento s2 = new Estabelecimento();
         s2.setNome("Shopping Boa Vista");
