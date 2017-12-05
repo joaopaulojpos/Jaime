@@ -5,11 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.jaime.jaime.R;
-import com.jaime.jaime.apiclima.Clima;
-import com.jaime.jaime.teste.TesteActivity;
 
 public class CategoriaEstabelecimentosActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnRestaurante;
@@ -51,13 +48,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
                 intent.putExtra("Categoria", "Shopping");
                 break;
         }
-        startActivity(intent);
-    }
-
-
-    //Estou fazendo esse metodo aqui para chamar a activity de Clima.
-    public void acionarClima(View view) {
-        Intent intent = new Intent(this, Clima.class);
         startActivity(intent);
     }
 
