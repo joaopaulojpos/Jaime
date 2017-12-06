@@ -10,14 +10,21 @@
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Portrait Selecione o desejado:"
+        android:text="Landscape Selecione o desejado:"
         android:textSize="24dp" />
 
     <RelativeLayout
         android:id="@+id/containerFragmentList"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_below="@+id/tv3" />
+
+    <ScrollView
+        android:id="@+id/containerFragmentDetalhe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tv3"
+        android:layout_toRightOf="@id/containerFragmentList" />
 
 
 </RelativeLayout>

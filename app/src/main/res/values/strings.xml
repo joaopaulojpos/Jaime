@@ -2,4 +2,7 @@
     <string name="app_name">Jaime</string>
     <string name="hint_anotacao">Anote aqui sobre esse local.</string>
     <string name="title_activity_teste_maps">Map</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

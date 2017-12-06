@@ -33,5 +33,27 @@ public class BackupCodigosEsquecidos {
         }
         return estabelecimentos;
     }
+
+
+
+
+
+
+
+
+
+            UtilTela utilTela = new UtilTela();
+        Configuration configuration = getResources().getConfiguration();
+        String orientacaoAtual = utilTela.descobrirOrientacao(configuration);
+        View view = null;
+        switch (orientacaoAtual) {
+            case "landscape":
+                view = inflater.inflate(R.layout.fragment_form_land, container, false);
+                break;
+            case "portrait":
+                view = inflater.inflate(R.layout.fragment_form, container, false);
+                break;
+        }
+
 */
 }

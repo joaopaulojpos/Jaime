@@ -34,6 +34,6 @@ public class MainActivity extends AppCompatActivity{
                 startActivity(new Intent(getBaseContext(), CategoriaEstabelecimentosActivity.class));
                 finish(); //Destruindo a Activity
             }
-        }, 5000);
+        }, 1000);
     }
 }
