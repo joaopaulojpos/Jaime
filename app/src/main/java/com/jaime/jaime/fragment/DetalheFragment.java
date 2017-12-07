@@ -26,7 +26,7 @@ import com.jaime.jaime.domain.Estabelecimento;
 import com.jaime.jaime.util.UtilTela;
 
 
-public class DetalheFragment extends Fragment implements View.OnClickListener{
+public class DetalheFragment extends Fragment implements View.OnClickListener {
 
     private View view;
 
@@ -49,39 +49,39 @@ public class DetalheFragment extends Fragment implements View.OnClickListener{
     private ImageView imgLogoMaps;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_detalhe, container, false);
+
+        System.out.println("DetalheFragment onCreateView entrou");
         pegarExtras();
         pegarReferencias(view);
         listenar();
-        Log.i("Leandro", "onCreateView: listener ok");
 
-
+        System.out.println("DetalheFragment onCreateView saiu");
         return view;
     }
 
     @Override
     public void onResume() {
+        System.out.println("DetalheFragment: onResume: setar campos na tela");
         setarCamposDaTela();
-        Log.i("Leandro", "onCreateView: setou campos na tela");
+        System.out.println("DetalheFragment: onResume: Setou todos");
         pegarRating();
-        Log.i("Leandro", "onCreateView: pegou rating");
+        System.out.println("DetalheFragment: onResume: pegou Rating");
 
         super.onResume();
     }
 
     @Override
     public void onPause() {
+        if (estabelecimento != null) {
+            avaliarSQLite();
+            favoritarSQLite();
+            anotacaoSQLite();
+        }
         super.onPause();
-
-        avaliarSQLite();
-
-        favoritarSQLite();
-
-        anotacaoSQLite();
     }
 
     @Override
@@ -136,30 +136,29 @@ public class DetalheFragment extends Fragment implements View.OnClickListener{
     }
 
     private void setarCamposDaTela() {
-        tvTitulo.setText("Oi");
-        Log.i("Leandro", "setarCamposDaTela: setou na mão");
-        tvTitulo.setText(estabelecimento.getNome());
-        tvDescricao.setText(estabelecimento.getDescricao());
-        tvEndereco.setText(estabelecimento.getEndereco());
-        tvHorario.setText(estabelecimento.getHorarioAbre() + " até " + estabelecimento.getHorarioFecha());
-        tvSite.setText(estabelecimento.getSite());
-        tvTelefone.setText(estabelecimento.getTelefone());
-        ratingBarAvalie.setRating(estabelecimento.getNota());
-        if (estabelecimento.getAnotacao() != null) {
-            txtInputEditTextAnotacao.setText(estabelecimento.getAnotacao());
+        if (estabelecimento != null) {
+            tvTitulo.setText(estabelecimento.getNome());
+            tvDescricao.setText(estabelecimento.getDescricao());
+            tvEndereco.setText(estabelecimento.getEndereco());
+            tvHorario.setText(estabelecimento.getHorarioAbre() + " até " + estabelecimento.getHorarioFecha());
+            tvSite.setText(estabelecimento.getSite());
+            tvTelefone.setText(estabelecimento.getTelefone());
+            ratingBarAvalie.setRating(estabelecimento.getNota());
+            if (estabelecimento.getAnotacao() != null) {
+                txtInputEditTextAnotacao.setText(estabelecimento.getAnotacao());
+            }
+
+
+            //Imagem
+            Resources res = this.getResources();
+            TypedArray imagens = res.obtainTypedArray(R.array.imagens);
+            imagem.setImageDrawable(imagens.getDrawable(estabelecimento.getImagem()));
+
+
+            if (estabelecimento.getIsFavorito() == 1) {
+                checkBoxFavorito.setChecked(true);
+            }
         }
-
-
-        //Imagem
-        Resources res = this.getResources();
-        TypedArray imagens = res.obtainTypedArray(R.array.imagens);
-        imagem.setImageDrawable(imagens.getDrawable(estabelecimento.getImagem()));
-
-
-        if (estabelecimento.getIsFavorito() == 1) {
-            checkBoxFavorito.setChecked(true);
-        }
-
     }
 
 
@@ -193,17 +192,16 @@ public class DetalheFragment extends Fragment implements View.OnClickListener{
 
                     Bundle bundle = getArguments();
                     estabelecimento.setId(Integer.parseInt(bundle.getString("idEstabelecimento")));
-                    Log.i("Leandro", "pegarExtras Land: Estabelecimento: " + estabelecimento.getId());
+                    System.out.println("DetalhesFragment:pegarExtras land:Estabelecimento: " + estabelecimento.getId());
                     break;
                 case "portrait":
                     intent = getActivity().getIntent();
                     estabelecimento = (Estabelecimento) intent.getSerializableExtra("Estabelecimento");
-                    Log.i("Leandro", "pegarExtras portrait: Estabelecimento: " + estabelecimento.getId());
+                    System.out.println("DetalhesFragment:pegarExtras portrait:Estabelecimento: " + estabelecimento.getId());
                     break;
             }
 
             estabelecimento = new EstabelecimentoDAO(getContext()).listarEstabelecimento(estabelecimento.getId());
-            Log.i("Leandro", "pegarExtras: Estabelecimento pós DAO: " + estabelecimento.getNome());
         } catch (Exception e) {
             e.printStackTrace();
         }

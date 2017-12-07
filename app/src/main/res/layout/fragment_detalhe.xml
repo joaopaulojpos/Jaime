@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-
 
 
     <RelativeLayout
@@ -26,6 +25,7 @@
             android:layout_height="200dp"
             android:layout_below="@id/tvTitulo1"
             android:layout_marginTop="10dp"
+            android:padding="10dp"
             android:src="@null" />
     </RelativeLayout>
 
@@ -64,6 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvDescricao"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvEndereco"
                 android:text="@null"
@@ -84,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvEndereco2"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvHorario"
                 android:text="@null"
@@ -93,7 +95,7 @@
                 android:id="@+id/tvTelefone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvHorario"
+                android:layout_below="@id/tvHorario2"
                 android:layout_marginTop="10dp"
                 android:text="Telefone:"
                 android:textSize="16dp"
@@ -103,7 +105,8 @@
                 android:id="@+id/tvTelefone2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvHorario"
+                android:layout_below="@+id/tvHorario2"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/tvTelefone"
                 android:text="@null"
@@ -113,7 +116,7 @@
                 android:id="@+id/tvSite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvTelefone"
+                android:layout_below="@id/tvTelefone2"
                 android:layout_marginTop="10dp"
                 android:text="Site:"
                 android:textSize="16dp"
@@ -123,7 +126,8 @@
                 android:id="@+id/tvSite2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvTelefone"
+                android:layout_below="@+id/tvTelefone2"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/tvSite"
                 android:text="@null"
@@ -133,7 +137,7 @@
                 android:id="@+id/tvAvalie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvSite"
+                android:layout_below="@id/tvSite2"
                 android:layout_marginTop="10dp"
                 android:paddingTop="15dp"
                 android:text="Avalie:"
@@ -144,7 +148,8 @@
                 android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tvSite"
+                android:layout_below="@id/tvSite2"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvAvalie" />
 
@@ -183,6 +188,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/imgLogoMaps"
                 android:text="Ver no Mapa"
+                android:textSize="16dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -198,8 +204,8 @@
                 android:id="@+id/txtInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvMaps"
-                android:layout_margin="20dp">
+                android:layout_below="@+id/tvDescricaoUsuario1"
+                >
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/txtInputEditTextAnotacao"

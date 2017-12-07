@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context="com.jaime.jaime.activity.SelecionarLocalActivity">
 
     <TextView
         android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Portrait Selecione o desejado:"
+        android:text="Selecione o desejado:"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
         android:textSize="24dp" />
 
     <RelativeLayout

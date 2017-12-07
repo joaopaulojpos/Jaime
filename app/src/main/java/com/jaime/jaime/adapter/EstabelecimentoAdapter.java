@@ -4,6 +4,8 @@ package com.jaime.jaime.adapter;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +78,8 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         TypedArray imagens = res.obtainTypedArray(R.array.imagens);
         //seta no ImageView a imagem no index referente ao estabelecimento, esse index é
         //o atributo estabelecimento.getImagem()
+
+
         imgImagem.setImageDrawable(imagens.getDrawable(estabelecimento.getImagem()));
 
         // Passo 4

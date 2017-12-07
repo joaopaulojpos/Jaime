@@ -20,7 +20,6 @@ import com.jaime.jaime.R;
 import com.jaime.jaime.apiclima.Clima;
 import com.jaime.jaime.apiclima.ClimaResposta;
 import com.jaime.jaime.apiclima.ClimaapiService;
-import com.jaime.jaime.teste.TesteActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CategoriaEstabelecimentosActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnRestaurante;
-    private Button btnBar;
+    private Button btnPraia;
     private Button btnTeatro;
     private Button btnClima;
     private Intent intent;
@@ -43,7 +42,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
 
     private static final String TAG = "CLIMEX";
     private Retrofit retrofit;
-    private Button btnLeandro;
 
 
     @Override
@@ -70,14 +68,14 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
     /**
      * Implementação do metódo de obtenção de dados, aqui ocorre o response vindo do GET
      */
-    public void obterDados(){
+    public void obterDados() {
         ClimaapiService service = retrofit.create(ClimaapiService.class);
         Call<ClimaResposta> climaRespostaCall = service.obterListaClimas();
 
         climaRespostaCall.enqueue(new Callback<ClimaResposta>() {
             @Override
             public void onResponse(Call<ClimaResposta> call, Response<ClimaResposta> response) {
-                if (response.isSuccessful()){
+                if (response.isSuccessful()) {
 
                     ClimaResposta climaResposta = response.body();
                     Clima listaClima = climaResposta.getResults();
@@ -87,7 +85,7 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
                     String descricao = listaClima.getDescription();
                     String condicao_tempo = listaClima.getCondition_slug();
 
-                    if ( listaClima.getCurrently().equals("noite")){
+                    if (listaClima.getCurrently().equals("noite")) {
                         Log.i(TAG, " Clima " + listaClima.getDescription());
                         //  Log.i(TAG, " Data " + listaClima.getDate());
                         Log.i(TAG, " Situação " + listaClima.getCurrently());
@@ -96,8 +94,8 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
                     }
                     gerarNotificacao(listaClima.getCondition_slug());
 
-                }else {
-                    Log.e(TAG," onResponse " + response.errorBody());
+                } else {
+                    Log.e(TAG, " onResponse " + response.errorBody());
                 }
             }
 
@@ -110,9 +108,10 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
 
     /**
      * Métood de implementaçao da Notification Local, Utilizamos a classe NotificationManager para execução
+     *
      * @param condicao - utilizado para definir em qual condição do if para o texto de notificação
      */
-    public void gerarNotificacao(String condicao){
+    public void gerarNotificacao(String condicao) {
 
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         PendingIntent p = PendingIntent.getActivity(this, 0, new Intent(this, CategoriaEstabelecimentosActivity.class), 0);
@@ -126,9 +125,9 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         builder.setContentIntent(p);
 
         NotificationCompat.InboxStyle style = new NotificationCompat.InboxStyle();
-        if (condicao.equals("cloudly_night") || condicao.equals("cloudly_day")){
-            String [] descs = new String[]{" OPS, a previsão hoje é de Tempo","Parcialmente Nublado Previna-se, ", " e leve consigo um guarda chuva"};
-            for(int i = 0; i < descs.length; i++){
+        if (condicao.equals("cloudly_night") || condicao.equals("cloudly_day")) {
+            String[] descs = new String[]{" OPS, a previsão hoje é de Tempo", "Parcialmente Nublado Previna-se, ", " e leve consigo um guarda chuva"};
+            for (int i = 0; i < descs.length; i++) {
                 style.addLine(descs[i]);
             }
         } else if (condicao.equals("cloud")) {
@@ -136,17 +135,17 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
             for (int i = 0; i < descs.length; i++) {
                 style.addLine(descs[i]);
             }
-        }else if (condicao.equals("storm")){
+        } else if (condicao.equals("storm")) {
             String[] descs = new String[]{" Olá, a previsão hoje é de Tempestades então", " prepare sua capa ou seu guarda chuva e", " tome muito cuidado !"};
             for (int i = 0; i < descs.length; i++) {
                 style.addLine(descs[i]);
             }
-        }else if (condicao.equals("rain")){
+        } else if (condicao.equals("rain")) {
             String[] descs = new String[]{" Olá, a previsão hoje é de muita chuva, tome muito cuidado", "por onde anda de preferência fique em casa. "};
             for (int i = 0; i < descs.length; i++) {
                 style.addLine(descs[i]);
             }
-        } else if (condicao.equals("clear_night") || condicao.equals("clear_day")){
+        } else if (condicao.equals("clear_night") || condicao.equals("clear_day")) {
             String[] descs = new String[]{" Olá, a previsão hoje é de Céu de limpo ", "então aproveita e vai explorar os lugares ", "conheçer coisas novas, Divirta-se. "};
             for (int i = 0; i < descs.length; i++) {
                 style.addLine(descs[i]);
@@ -158,12 +157,12 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         n.flags = Notification.FLAG_AUTO_CANCEL;
         nm.notify(R.drawable.ic_launcher_background, n);
 
-        try{
+        try {
             Uri som = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
             Ringtone toque = RingtoneManager.getRingtone(this, som);
             toque.play();
+        } catch (Exception e) {
         }
-        catch(Exception e){}
     }
 
     @Override
@@ -173,8 +172,8 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
             case R.id.btnRestaurante:
                 intent.putExtra("Categoria", "Restaurante");
                 break;
-            case R.id.btnBar:
-                intent.putExtra("Categoria", "Bar");
+            case R.id.btnPraia:
+                intent.putExtra("Categoria", "Praia");
                 break;
             case R.id.btnTeatro:
                 intent.putExtra("Categoria", "Teatro");
@@ -182,10 +181,6 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
             case R.id.btnShopping:
                 intent.putExtra("Categoria", "Shopping");
                 break;
-            case R.id.btnLeandro:
-                intent = new Intent(CategoriaEstabelecimentosActivity.this, TesteActivity.class);
-                break;
-
         }
         startActivity(intent);
     }
@@ -193,17 +188,15 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
 
     public void pegarReferencias() {
         btnRestaurante = findViewById(R.id.btnRestaurante);
-        btnBar = findViewById(R.id.btnBar);
+        btnPraia = findViewById(R.id.btnPraia);
         btnTeatro = findViewById(R.id.btnTeatro);
         btnShopping = findViewById(R.id.btnShopping);
-        btnLeandro = (Button) findViewById(R.id.btnLeandro);
     }
 
     public void listenarBotoes() {
         btnRestaurante.setOnClickListener(this);
-        btnBar.setOnClickListener(this);
+        btnPraia.setOnClickListener(this);
         btnTeatro.setOnClickListener(this);
         btnShopping.setOnClickListener(this);
-        btnLeandro.setOnClickListener(this);
     }
 }

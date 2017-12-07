@@ -22,6 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:padding="10dp"
+                android:textStyle="bold"
                 android:text="Tipo de Estabelecimento desejado:"
                 android:textSize="20dp" />
 
@@ -37,20 +38,20 @@
                 android:textSize="20dp" />
 
             <Button
-                android:id="@+id/btnBar"
+                android:id="@+id/btnPraia"
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:layout_below="@+id/btnRestaurante"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Bar"
+                android:text="Praia"
                 android:textSize="20dp" />
 
             <Button
                 android:id="@+id/btnTeatro"
                 android:layout_width="250dp"
                 android:layout_height="100dp"
-                android:layout_below="@+id/btnBar"
+                android:layout_below="@+id/btnPraia"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:text="Teatro"
@@ -64,16 +65,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:text="Shopping"
-                android:textSize="20dp" />
-
-            <Button
-                android:id="@+id/btnLeandro"
-                android:layout_width="250dp"
-                android:layout_height="100dp"
-                android:layout_below="@+id/btnShopping"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
-                android:text="Teste Leandro"
                 android:textSize="20dp" />
 
         </RelativeLayout>

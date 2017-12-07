@@ -1,5 +1,7 @@
 package com.jaime.jaime.domain;
 
+import com.jaime.jaime.util.TextoUtil;
+
 import java.io.Serializable;
 
 public class Estabelecimento implements Serializable{
@@ -145,8 +147,16 @@ public class Estabelecimento implements Serializable{
         return nome;
     }
 
+    /**
+     * Esse SetNome vai limitar o nome em no maximo 20 caracteres pra não estragar a organização
+     * da Listivew.
+     *
+     * @param nome
+     */
     public void setNome(String nome) {
-        this.nome = nome;
+        TextoUtil textoUtil = new TextoUtil();
+
+        this.nome = textoUtil.limitarTamanhoTexto(nome, 20);
     }
 
     public String getTelefone() {

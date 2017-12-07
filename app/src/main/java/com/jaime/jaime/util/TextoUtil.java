@@ -2,10 +2,10 @@ package com.jaime.jaime.util;
 
 public class TextoUtil {
 
-    public String limitarTamanhoTexto(String texto) {
+    public String limitarTamanhoTexto(String texto, int limite) {
         String retorno = texto;
-        if (texto.length() > 100) {
-            retorno = texto.substring(0, 100);
+        if (texto.length() > limite) {
+            retorno = texto.substring(0, limite);
             retorno = texto.substring(0, retorno.lastIndexOf(" "));
             retorno += "...";
         }

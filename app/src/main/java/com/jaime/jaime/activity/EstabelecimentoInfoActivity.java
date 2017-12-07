@@ -18,7 +18,10 @@ public class EstabelecimentoInfoActivity extends AppCompatActivity {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.containerFragmentDetalhe, new DetalheFragment());
+
+//        DetalheFragment detalheFragment = fragmentManager.findFragmentByTag()
+
+        fragmentTransaction.replace(R.id.containerFragmentDetalhe, new DetalheFragment(), "TAGFragmentDetalhe");
         fragmentTransaction.commit();
     }
 }
