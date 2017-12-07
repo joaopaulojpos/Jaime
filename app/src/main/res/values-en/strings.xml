@@ -7,4 +7,12 @@
     <string name="praias">BEACHES</string>
     <string name="finalizar_introducao">Finish Introduction</string>
     <string name="hint_anotacao">Write down here about this location.</string>
+    <string name="shopping_categoria">Malls</string>
+    <string name="restaurante_categoria">Restaurants</string>
+    <string name="praia_categoria">Beaches</string>
+    <string name="teatro_categoria">Theaters</string>
+    <string name="descricao1">Get to know the main shopping malls in the city</string>
+    <string name="descricao2">Enjoy an incomparable taste by experimenting with the spices of the region</string>
+    <string name="descricao3">Charm, joy, smiles, drama, suspense ... these and other emotions gathered in one place</string>
+    <string name="descricao4">Enjoy that hot sunshine on the best beaches great for getting a tan</string>
 </resources>

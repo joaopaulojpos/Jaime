@@ -10,4 +10,13 @@
     <string name="restaurantes">RESTAURANTES</string>
     <string name="teatros">TEATROS</string>
     <string name="praias">PRAIAS</string>
+    <string name="restaurante_categoria">Restaurantes</string>
+    <string name="praia_categoria">Praias</string>
+    <string name="teatro_categoria">Teatros</string>
+    <string name="shopping_categoria">Shoppings</string>
+    <string name="descricao1">Conheça os principais shoppings da cidade</string>
+    <string name="descricao2">Desfrute de um sabor inigualável
+ experimentando os temperos da região</string>
+    <string name="descricao3">Encanto, alegria, sorrisos, drama, suspense …  essas e outras emoções reunidas em um só lugar</string>
+    <string name="descricao4">Curta aquele solzão gostoso nas melhores praias  ótimo para pegar um bronzeado</string>
 </resources>

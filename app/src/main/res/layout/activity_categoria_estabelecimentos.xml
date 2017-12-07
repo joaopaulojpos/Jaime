@@ -34,7 +34,7 @@
                 android:layout_below="@+id/tv2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Restaurante"
+                android:text="@string/restaurante_categoria"
                 android:textSize="20dp" />
 
             <Button
@@ -44,7 +44,7 @@
                 android:layout_below="@+id/btnRestaurante"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Praia"
+                android:text="@string/praia_categoria"
                 android:textSize="20dp" />
 
             <Button
@@ -54,7 +54,7 @@
                 android:layout_below="@+id/btnPraia"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Teatro"
+                android:text="@string/teatro_categoria"
                 android:textSize="20dp" />
 
             <Button
@@ -64,7 +64,7 @@
                 android:layout_below="@id/btnTeatro"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:text="Shopping"
+                android:text="@string/shopping_categoria"
                 android:textSize="20dp" />
 
         </RelativeLayout>

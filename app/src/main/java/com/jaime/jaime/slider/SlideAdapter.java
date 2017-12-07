@@ -42,10 +42,10 @@ public class SlideAdapter extends PagerAdapter {
 
     //list of description
     public String[] lst_description = {
-            "Conheça os principais shoppings da cidade",
-            "Desfrute de um sabor inigualável \n experimentando os temperos da região",
-            "Encanto, alegria, sorrisos, drama, suspense ... \n essas e outras emoções reunidas em um só lugar",
-            "Curta aquele solzão gostoso nas melhores praias \n ótimo para pegar um bronzeado",
+            "@string/descricao1",
+            "@string/descricao2",
+            "@string/descricao3",
+            "@string/descricao4",
     };
 
     //list of background colors
