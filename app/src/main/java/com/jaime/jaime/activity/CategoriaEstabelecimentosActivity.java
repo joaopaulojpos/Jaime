@@ -15,7 +15,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.jaime.jaime.MapsTeste.TesteMapsActivity;
 import com.jaime.jaime.R;
 import com.jaime.jaime.apiclima.Clima;
 import com.jaime.jaime.apiclima.ClimaResposta;

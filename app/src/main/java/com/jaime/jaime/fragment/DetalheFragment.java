@@ -1,15 +1,12 @@
 package com.jaime.jaime.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +15,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.jaime.jaime.MapsTeste.TesteMapsActivity;
+import com.jaime.jaime.activity.MapsActivity;
 import com.jaime.jaime.R;
-import com.jaime.jaime.activity.EstabelecimentoInfoActivity;
 import com.jaime.jaime.dao.EstabelecimentoDAO;
 import com.jaime.jaime.domain.Estabelecimento;
 import com.jaime.jaime.util.UtilTela;
@@ -54,22 +50,17 @@ public class DetalheFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_detalhe, container, false);
 
-        System.out.println("DetalheFragment onCreateView entrou");
         pegarExtras();
         pegarReferencias(view);
         listenar();
 
-        System.out.println("DetalheFragment onCreateView saiu");
         return view;
     }
 
     @Override
     public void onResume() {
-        System.out.println("DetalheFragment: onResume: setar campos na tela");
         setarCamposDaTela();
-        System.out.println("DetalheFragment: onResume: Setou todos");
         pegarRating();
-        System.out.println("DetalheFragment: onResume: pegou Rating");
 
         super.onResume();
     }
@@ -86,7 +77,7 @@ public class DetalheFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(getContext(), TesteMapsActivity.class);
+        Intent intent = new Intent(getContext(), MapsActivity.class);
         switch (v.getId()) {
             case R.id.tvMaps:
                 abrirNoMapa(intent);
@@ -192,12 +183,10 @@ public class DetalheFragment extends Fragment implements View.OnClickListener {
 
                     Bundle bundle = getArguments();
                     estabelecimento.setId(Integer.parseInt(bundle.getString("idEstabelecimento")));
-                    System.out.println("DetalhesFragment:pegarExtras land:Estabelecimento: " + estabelecimento.getId());
                     break;
                 case "portrait":
                     intent = getActivity().getIntent();
                     estabelecimento = (Estabelecimento) intent.getSerializableExtra("Estabelecimento");
-                    System.out.println("DetalhesFragment:pegarExtras portrait:Estabelecimento: " + estabelecimento.getId());
                     break;
             }
 

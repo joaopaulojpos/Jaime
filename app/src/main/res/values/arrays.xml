@@ -3,9 +3,11 @@
         <item>@drawable/imagem_teste</item>
         <item>@drawable/teatro_santa_isabel</item>
         <item>@drawable/teatro_rio_mar</item>
-        <item>@drawable/shopping_boa_vista</item>
+        <item>@drawable/rio_mar</item>
         <item>@drawable/shopping_recife</item>
-        <item>@drawable/seu_luna_restaurante_e_bar</item>
-        <item>@drawable/restaurante_portal_do_picui</item>
+        <item>@drawable/restaurante_leite</item>
+        <item>@drawable/ilha_sertaneja</item>
+        <item>@drawable/praia_boa_viagem</item>
+        <item>@drawable/praia_pina</item>
     </array>
 </resources>

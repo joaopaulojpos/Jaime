@@ -41,17 +41,14 @@ public class ListaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_list, container, false);
-        System.out.println("Leandro ListaFragment: onCreateView: Criou a view do ListaFragment");
         pegarReferencias(view);
         pegarExtras();
 
-        System.out.println("Leandro ListaFragment: onCreateView: Retornoou a View");
         return view;
     }
 
     @Override
     public void onResume() {
-        System.out.println("Leandro ListaFragment: onCreateView: Entrou no onResume");
         estabelecimentos = new ArrayList<>();
         DarCargaNoBanco darCargaNoBanco = new DarCargaNoBanco();
 
@@ -109,7 +106,6 @@ public class ListaFragment extends Fragment {
                             fragmentTransaction.commit();
                             break;
                         case "portrait":
-                            System.out.println("ListaFragment onClick Portrait");
                             Intent intentProximaPagina = new Intent(getContext(), EstabelecimentoInfoActivity.class);
                             intentProximaPagina.putExtra("Estabelecimento", estabelecimento);
                             startActivity(intentProximaPagina);
@@ -119,7 +115,6 @@ public class ListaFragment extends Fragment {
             }
         });
 
-        System.out.println("Leandro ListaFragment: onCreateView: Saiu do onResume");
         super.onResume();
     }
 

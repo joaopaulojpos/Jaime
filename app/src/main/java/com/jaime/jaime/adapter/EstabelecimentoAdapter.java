@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.jaime.jaime.R;
 import com.jaime.jaime.domain.Estabelecimento;
+import com.jaime.jaime.util.TextoUtil;
 
 import java.util.List;
 
@@ -70,7 +71,7 @@ public class EstabelecimentoAdapter extends BaseAdapter {
         tvNome.setText(estabelecimento.getNome());
         ratingBar.setMax(5);
         ratingBar.setRating(estabelecimento.getNotaMedia());
-        tvDescricao.setText(estabelecimento.getDescricao());
+        tvDescricao.setText(new TextoUtil().limitarTamanhoTexto(estabelecimento.getDescricao(), 50));
         tvTotalVotos.setText("(" + estabelecimento.getTotalVotos() + ")");
 
         //IMAGEM
