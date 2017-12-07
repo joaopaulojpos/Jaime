@@ -33,19 +33,19 @@ public class SlideAdapter extends PagerAdapter {
     };
 
     //lis of titles
-    public String[] lst_titles = {
-            "@string/shoppings",
-            "@string/restaurantes",
-            "@string/teatros",
-            "@string/praias"
+    public int[] lst_titles = {
+            R.string.shoppings,
+            R.string.restaurantes,
+            R.string.teatros,
+            R.string.praias
     };
 
     //list of description
-    public String[] lst_description = {
-            "@string/descricao1",
-            "@string/descricao2",
-            "@string/descricao3",
-            "@string/descricao4",
+    public int[] lst_description = {
+            R.string.descricao1,
+            R.string.descricao2,
+            R.string.descricao3,
+            R.string.descricao4
     };
 
     //list of background colors
