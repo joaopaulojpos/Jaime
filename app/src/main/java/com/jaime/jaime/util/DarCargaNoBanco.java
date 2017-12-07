@@ -17,8 +17,12 @@ public class DarCargaNoBanco {
 
     TextoUtil textoUtil = new TextoUtil();
 
-
-
+    /**
+     * Alimenta o baco de acordo com a categoria selecionada na tela dde categoria, recebendo a categoria
+     * @param context - porque o app pede o contexto
+     * @param categoria - recebe o parametro vindo do botão da tela de selecionar categoria
+     * @return - Uma lista alimentada após a carga
+     */
     public List<Estabelecimento> darCarga(Context context, String categoria) {
         List<Estabelecimento> estabelecimentos = new ArrayList<Estabelecimento>();
 

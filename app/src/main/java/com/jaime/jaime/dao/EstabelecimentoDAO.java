@@ -85,6 +85,11 @@ public class EstabelecimentoDAO extends SQLiteOpenHelper {
         return estabelecimento;
     }
 
+    /**
+     * Regra do SQLite para utilização do BD
+     * @param estabelecimento
+     * @return
+     */
     @NonNull
     private ContentValues getContentValues(Estabelecimento estabelecimento) {
         ContentValues cv = new ContentValues();

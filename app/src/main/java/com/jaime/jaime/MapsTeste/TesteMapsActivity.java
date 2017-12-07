@@ -33,6 +33,9 @@ public class TesteMapsActivity extends FragmentActivity implements OnMapReadyCal
         pegarExtras();
     }
 
+    /**
+     * Pegando os a latitude e longitude que vem da tela anterior
+     */
     private void pegarExtras() {
         extrasPaginaAnterior = getIntent().getExtras();
         //pega a latitude e longitude que foi escolhida na página anterior

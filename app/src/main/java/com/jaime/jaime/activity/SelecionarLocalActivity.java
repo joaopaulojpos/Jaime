@@ -19,21 +19,12 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecionar_local);
 
-        System.out.println("SelecionarLocalActivity OnCreate entrou");
-
+        /**
+         * Aqui é instanciado o e inflado o Fragment
+         */
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-//        ListaFragment listaFragment = (ListaFragment)fragmentManager.findFragmentByTag("TAGFragmentLista");
-
-//        if(listaFragment == null){
-            fragmentTransaction.replace(R.id.containerFragmentList, new ListaFragment(), "TAGFragmentLista");
-//        }else{
-//            fragmentTransaction.replace(R.id.containerFragmentList, listaFragment, "TAGFragmentLista");
-//        }
-
+        fragmentTransaction.add(R.id.containerFragmentList, new ListaFragment(), "TAGFragmentLista");
         fragmentTransaction.commit();
-
-        System.out.println("SelecionarLocalActivity OnCreate saiu");
     }
 }

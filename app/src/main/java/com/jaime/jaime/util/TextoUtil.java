@@ -2,10 +2,15 @@ package com.jaime.jaime.util;
 
 public class TextoUtil {
 
-    public String limitarTamanhoTexto(String texto, int limite) {
+    /**
+     * Este metodo limita a quantidade de caracteres que irá aparecer no adpter do ListView
+     * @param texto - recebe o texto vindo dos metodos de carga, variavel wikipediaTexto
+     * @return - Um texto menor adaptavel ao ListView
+     */
+    public String limitarTamanhoTexto(String texto) {
         String retorno = texto;
-        if (texto.length() > limite) {
-            retorno = texto.substring(0, limite);
+        if (texto.length() > 100) {
+            retorno = texto.substring(0, 100);
             retorno = texto.substring(0, retorno.lastIndexOf(" "));
             retorno += "...";
         }
