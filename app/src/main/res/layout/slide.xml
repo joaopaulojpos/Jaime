@@ -40,7 +40,7 @@
         android:layout_marginTop="165dp"
         android:textAlignment="center"
         android:textColor="#FFF"
-        android:text="Finalizar Introdução"/>
+        android:text="@string/finalizar_introducao"/>
 
 
 </LinearLayout>

@@ -34,18 +34,18 @@ public class SlideAdapter extends PagerAdapter {
 
     //lis of titles
     public String[] lst_titles = {
-            "SHOPPINGS",
-            "RESTAURANTES",
-            "TEATROS",
-            "PRAIAS"
+            "@string/shoppings",
+            "@string/restaurantes",
+            "@string/teatros",
+            "@string/praias"
     };
 
     //list of description
     public String[] lst_description = {
-            "Descripiton 1",
-            "Descripiton 2",
-            "Descripiton 3",
-            "Descripiton 4",
+            "Conheça os principais shoppings da cidade",
+            "Desfrute de um sabor inigualável \n experimentando os temperos da região",
+            "Encanto, alegria, sorrisos, drama, suspense ... \n essas e outras emoções reunidas em um só lugar",
+            "Curta aquele solzão gostoso nas melhores praias \n ótimo para pegar um bronzeado",
     };
 
     //list of background colors
