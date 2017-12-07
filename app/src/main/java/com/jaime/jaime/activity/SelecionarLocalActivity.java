@@ -19,6 +19,9 @@ public class SelecionarLocalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selecionar_local);
 
+        /**
+         * Aqui é instanciado o e inflado o Fragment
+         */
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.containerFragmentList, new ListaFragment(), "TAGFragmentLista");

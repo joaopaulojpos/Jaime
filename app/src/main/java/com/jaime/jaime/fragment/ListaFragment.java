@@ -77,7 +77,11 @@ public class ListaFragment extends Fragment {
         //Se tiver vazio mostra um ícone do Android(não tá funcionando)
 //        listView.setEmptyView(getView().findViewById(android.R.id.empty));
 
-        //Se o usuário clicar em algum item da lista...
+        /**
+         * Este metodo é para quando for clicado em um local, joga o usuario para uma tela com os
+         * detalhes do local selecionado, se caso a orientação for Landscape será mostrado as informações
+         * do local ao lado
+         */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {

@@ -166,6 +166,10 @@ public class CategoriaEstabelecimentosActivity extends AppCompatActivity impleme
         catch(Exception e){}
     }
 
+    /**
+     *Faz a chave valor para mandar para a proxima INTENT e ela saber qual categoria é para listar.
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         intent = new Intent(CategoriaEstabelecimentosActivity.this, SelecionarLocalActivity.class);
