@@ -73,7 +73,7 @@ public class DarCargaNoBanco {
                 "ver missas e casamentos sendo realizados. \n" +
                 "A igreja está situada bem no meio da pracinha de Boa Viagem, rodeada pelas " +
                 "barraquinhas de comércio de lanches, souvenires, artigos de praia e etc.";
-        i1.setDescricao(wikipediaTexto);
+        i1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         i1.setLocalPublico(0);
         i1.setEndereco("R. Barão de Souza Leão, s/n - Boa Viagem, Recife - PE, 51021-400");
         i1.setTelefone("(81) 3326-6161");
@@ -92,7 +92,7 @@ public class DarCargaNoBanco {
         String wikipediaTexto2 = "A Concatedral de São Pedro dos Clérigos, também conhecida simplesmente" +
                 " como Igreja de São Pedro dos Clérigos, é um templo católico situado no município " +
                 "do Recife, capital do estado de Pernambuco, Brasil.";
-        i2.setDescricao(wikipediaTexto2);
+        i2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         i2.setLocalPublico(0);
         i2.setEndereco("Santo Antônio, Recife - PE, 50010-360");
         i2.setTelefone("");
@@ -117,7 +117,7 @@ public class DarCargaNoBanco {
         p1.setNome("Praia de Boa Viagem");
         String wikipediaTexto = "A Praia de Boa Viagem é a praia urbana mais famosa da cidade do " +
                 "Recife, capital do estado de Pernambuco. ";
-        p1.setDescricao(wikipediaTexto);
+        p1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         p1.setLocalPublico(0);
         p1.setEndereco("");
         p1.setTelefone("");
@@ -134,7 +134,7 @@ public class DarCargaNoBanco {
         Estabelecimento p2 = new Estabelecimento();
         p2.setNome("Praia do Pina");
         String wikipediaTexto2 = "";
-        p2.setDescricao(wikipediaTexto2);
+        p2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         p2.setLocalPublico(0);
         p2.setEndereco("Av. Boa Viagem - Pina, Recife - PE, 51011-000");
         p2.setTelefone("");
@@ -158,7 +158,7 @@ public class DarCargaNoBanco {
         Estabelecimento a1 = new Estabelecimento();
         a1.setNome("Academia Recife Santo Amaro ");
         String wikipediaTexto = "";
-        a1.setDescricao(wikipediaTexto);
+        a1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         a1.setLocalPublico(0);
         a1.setEndereco("Av. Gov. Agamenon Magalhães, 4102-4130 - Santo Amaro, Recife - PE, 50030-230");
         a1.setTelefone("");
@@ -175,7 +175,7 @@ public class DarCargaNoBanco {
         Estabelecimento a2 = new Estabelecimento();
         a2.setNome("Yes Fit Academia");
         String wikipediaTexto2 = "";
-        a2.setDescricao(wikipediaTexto2);
+        a2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         a2.setLocalPublico(0);
         a2.setEndereco("R. Jean Emile Favre, 1312 - Ipsep, Recife - PE, 51190-450");
         a2.setTelefone("(81) 3031-9006");
@@ -199,7 +199,7 @@ public class DarCargaNoBanco {
         Estabelecimento p1 = new Estabelecimento();
         p1.setNome("");
         String wikipediaTexto = "";
-        p1.setDescricao(wikipediaTexto);
+        p1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         p1.setLocalPublico(0);
         p1.setEndereco("");
         p1.setTelefone("");
@@ -216,7 +216,7 @@ public class DarCargaNoBanco {
         Estabelecimento p2 = new Estabelecimento();
         p2.setNome("");
         String wikipediaTexto2 = "";
-        p2.setDescricao(wikipediaTexto2);
+        p2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         p2.setLocalPublico(0);
         p2.setEndereco("");
         p2.setTelefone("");
@@ -240,7 +240,7 @@ public class DarCargaNoBanco {
         Estabelecimento e1 = new Estabelecimento();
         e1.setNome("");
         String wikipediaTexto = "";
-        e1.setDescricao(wikipediaTexto);
+        e1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         e1.setLocalPublico(0);
         e1.setEndereco("");
         e1.setTelefone("");
@@ -257,7 +257,7 @@ public class DarCargaNoBanco {
         Estabelecimento e2 = new Estabelecimento();
         e2.setNome("");
         String wikipediaTexto2 = "";
-        e2.setDescricao(wikipediaTexto2);
+        e2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         e2.setLocalPublico(0);
         e2.setEndereco("");
         e2.setTelefone("");
@@ -281,7 +281,7 @@ public class DarCargaNoBanco {
         Estabelecimento p1 = new Estabelecimento();
         p1.setNome("");
         String wikipediaTexto = "";
-        p1.setDescricao(wikipediaTexto);
+        p1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         p1.setLocalPublico(0);
         p1.setEndereco("");
         p1.setTelefone("");
@@ -298,7 +298,7 @@ public class DarCargaNoBanco {
         Estabelecimento p2 = new Estabelecimento();
         p2.setNome("");
         String wikipediaTexto2 = "";
-        p2.setDescricao(wikipediaTexto2);
+        p2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         p2.setLocalPublico(0);
         p2.setEndereco("");
         p2.setTelefone("");
@@ -323,7 +323,7 @@ public class DarCargaNoBanco {
         Estabelecimento m1 = new Estabelecimento();
         m1.setNome("");
         String wikipediaTexto = "";
-        m1.setDescricao(wikipediaTexto);
+        m1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         m1.setLocalPublico(0);
         m1.setEndereco("");
         m1.setTelefone("");
@@ -340,7 +340,7 @@ public class DarCargaNoBanco {
         Estabelecimento m2 = new Estabelecimento();
         m2.setNome("");
         String wikipediaTexto2 = "";
-        m2.setDescricao(wikipediaTexto2);
+        m2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         m2.setLocalPublico(0);
         m2.setEndereco("");
         m2.setTelefone("");
@@ -364,7 +364,7 @@ public class DarCargaNoBanco {
         Estabelecimento h1 = new Estabelecimento();
         h1.setNome("");
         String wikipediaTexto = "";
-        h1.setDescricao(wikipediaTexto);
+        h1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         h1.setLocalPublico(0);
         h1.setEndereco("");
         h1.setTelefone("");
@@ -381,7 +381,7 @@ public class DarCargaNoBanco {
         Estabelecimento h2 = new Estabelecimento();
         h2.setNome("");
         String wikipediaTexto2 = "";
-        h2.setDescricao(wikipediaTexto2);
+        h2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         h2.setLocalPublico(0);
         h2.setEndereco("");
         h2.setTelefone("");
@@ -406,7 +406,7 @@ public class DarCargaNoBanco {
         r1.setNome("Seu Luna Restaurante e Bar");
         String wikipediaTexto = "Boteco acolhedor serve cervejas artesanais e menu de" +
                 " especialidades brasileiras de pratos e tábuas mistas.";
-        r1.setDescricao(wikipediaTexto);
+        r1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         r1.setLocalPublico(0);
         r1.setEndereco("Rua Saldanha Marinho, 645 - Ipsep, Recife - PE, 51190-660");
         r1.setTelefone("(81) 3339-0012");
@@ -424,7 +424,7 @@ public class DarCargaNoBanco {
         r2.setNome("Restaurante Portal do Picuí");
         String wikipediaTexto2 = "Tradicional carne de sol do interior da Paraíba, grelhados, " +
                 "pratos quentes, pizzas, saladas e clima familiar.";
-        r2.setDescricao(wikipediaTexto2);
+        r2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         r2.setLocalPublico(0);
         r2.setEndereco("R. Félix Pachêco, 261 - Ipsep, Recife - PE, 51190-060");
         r2.setTelefone("");
@@ -450,7 +450,7 @@ public class DarCargaNoBanco {
         String wikipediaTexto = "O Shopping Recife, antigo Shopping Center Recife, " +
                 "é um centro comercial de grande porte localizado no bairro de Boa Viagem, " +
                 "no Recife, estado de Pernambuco.";
-        s1.setDescricao(wikipediaTexto);
+        s1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         s1.setLocalPublico(0);
         s1.setEndereco("R. Padre Carapuceiro, 777 - Boa Viagem, Recife - PE, 51020-900");
         s1.setTelefone("(81) 3464-6464");
@@ -468,7 +468,7 @@ public class DarCargaNoBanco {
         Estabelecimento s2 = new Estabelecimento();
         s2.setNome("Shopping Boa Vista");
         String wikipediaTexto2 = "";
-        s2.setDescricao(wikipediaTexto2);
+        s2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         s2.setLocalPublico(0);
         s2.setEndereco("R. do Giriquiti, 48 - Boa Vista, Recife - PE, 50070-010");
         s2.setTelefone("(81) 3423-5666");
@@ -495,7 +495,7 @@ public class DarCargaNoBanco {
                 "cidade brasileira do Recife, capital do estado de Pernambuco. " +
                 "É um raro exemplo de genuína arquitetura neoclássica da primeira metade do " +
                 "século XIX brasileiro.";
-        t1.setDescricao(wikipediaTexto);
+        t1.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto, 100));
         t1.setLocalPublico(0);
         t1.setEndereco("Praça da República, s/n - Santo Antônio, Recife - PE, 50010-040");
         t1.setTelefone("(81) 3355-3323");
@@ -514,7 +514,7 @@ public class DarCargaNoBanco {
         t2.setNome("Teatro RioMar Recife");
         String wikipediaTexto2 = "Teatro de 1000 assentos numerados com balcão superior e " +
                 "programação variada de espetáculos cênicos e cômicos.";
-        t2.setDescricao(wikipediaTexto2);
+        t2.setDescricao(textoUtil.limitarTamanhoTexto(wikipediaTexto2, 100));
         t2.setLocalPublico(0);
         t2.setEndereco("Av. República do Líbano, 251 - Pina, Recife - PE, 51110-160");
         t2.setTelefone("4003-1212");

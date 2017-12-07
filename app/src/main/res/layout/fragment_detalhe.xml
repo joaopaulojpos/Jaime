@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvDescricao"
                 android:layout_marginTop="10dp"
-                android:text="Endereço: "
+                android:text="@string/endereco"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvEndereco"
-                android:text="@null"
+                android:text="Endereço"
                 android:textSize="16dp" />
 
             <TextView
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvEndereco2"
                 android:layout_marginTop="10dp"
-                android:text="Horario: "
+                android:text="@string/horario"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -88,7 +88,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@id/tvHorario"
-                android:text="@null"
+                android:text="Horario"
                 android:textSize="16dp" />
 
             <TextView
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvHorario2"
                 android:layout_marginTop="10dp"
-                android:text="Telefone:"
+                android:text="@string/telefone"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -109,7 +109,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/tvTelefone"
-                android:text="@null"
+                android:text="Telefone"
                 android:textSize="16dp" />
 
             <TextView
@@ -118,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tvTelefone2"
                 android:layout_marginTop="10dp"
-                android:text="Site:"
+                android:text="@string/site"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -130,7 +130,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/tvSite"
-                android:text="@null"
+                android:text="Site"
                 android:textSize="16dp" />
 
             <TextView
@@ -140,7 +140,7 @@
                 android:layout_below="@id/tvSite2"
                 android:layout_marginTop="10dp"
                 android:paddingTop="15dp"
-                android:text="Avalie:"
+                android:text="@string/avalie"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ratingBar"
                 android:layout_marginTop="10dp"
-                android:text="Adicionar aos Favoritos:"
+                android:text="@string/add_favorito"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -176,7 +176,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_below="@id/tvAddFav"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/google_maps" />
 
             <TextView
@@ -185,9 +185,9 @@
                 android:layout_height="50dp"
                 android:layout_below="@id/tvAddFav"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 android:layout_toRightOf="@id/imgLogoMaps"
-                android:text="Ver no Mapa"
+                android:text="@string/ver_no_mapa"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -196,7 +196,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvMaps"
-                android:text="Minha Opinião:"
+                android:text="@string/minha_opiniao"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
@@ -204,8 +204,7 @@
                 android:id="@+id/txtInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvDescricaoUsuario1"
-                >
+                android:layout_below="@+id/tvDescricaoUsuario1">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/txtInputEditTextAnotacao"

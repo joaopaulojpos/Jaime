@@ -7,10 +7,10 @@ public class TextoUtil {
      * @param texto - recebe o texto vindo dos metodos de carga, variavel wikipediaTexto
      * @return - Um texto menor adaptavel ao ListView
      */
-    public String limitarTamanhoTexto(String texto) {
+    public String limitarTamanhoTexto(String texto, int limite) {
         String retorno = texto;
-        if (texto.length() > 100) {
-            retorno = texto.substring(0, 100);
+        if (texto.length() > limite) {
+            retorno = texto.substring(0, limite);
             retorno = texto.substring(0, retorno.lastIndexOf(" "));
             retorno += "...";
         }

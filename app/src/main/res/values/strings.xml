@@ -19,4 +19,14 @@
  experimentando os temperos da região</string>
     <string name="descricao3">Encanto, alegria, sorrisos, drama, suspense …  essas e outras emoções reunidas em um só lugar</string>
     <string name="descricao4">Curta aquele solzão gostoso nas melhores praias  ótimo para pegar um bronzeado</string>
+    <string name="titulo1">Categoria de local desejado:</string>
+    <string name="titulo2">Selecione o local desejado:</string>
+    <string name="endereco">Endereço:</string>
+    <string name="horario">Horario:</string>
+    <string name="telefone">Telefone:</string>
+    <string name="site">Site:</string>
+    <string name="avalie">Avalie:</string>
+    <string name="add_favorito">Adicionar aos Favoritos:</string>
+    <string name="ver_no_mapa">Ver no Mapa</string>
+    <string name="minha_opiniao">Anotações pessoais:</string>
 </resources>

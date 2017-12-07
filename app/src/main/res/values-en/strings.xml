@@ -15,4 +15,14 @@
     <string name="descricao2">Enjoy an incomparable taste by experimenting with the spices of the region</string>
     <string name="descricao3">Charm, joy, smiles, drama, suspense ... these and other emotions gathered in one place</string>
     <string name="descricao4">Enjoy that hot sunshine on the best beaches great for getting a tan</string>
+    <string name="titulo1">Desired location category:</string>
+    <string name="titulo2">Select the desired location:</string>
+    <string name="endereco">Address:</string>
+    <string name="horario">Hours:</string>
+    <string name="telefone">Phone:</string>
+    <string name="site">Site:</string>
+    <string name="avalie">Rate:</string>
+    <string name="add_favorito">Add to Favorites:</string>
+    <string name="ver_no_mapa">See on Map</string>
+    <string name="minha_opiniao">Personal Annotations:</string>
 </resources>

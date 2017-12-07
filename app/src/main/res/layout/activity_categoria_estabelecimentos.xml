@@ -23,7 +23,7 @@
                 android:layout_centerHorizontal="true"
                 android:padding="10dp"
                 android:textStyle="bold"
-                android:text="Tipo de Estabelecimento desejado:"
+                android:text="@string/titulo1"
                 android:textSize="20dp" />
 
 
