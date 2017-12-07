@@ -21,7 +21,8 @@
         <activity android:name=".activity.MainActivity">
 
         </activity>
-        <activity android:name=".activity.CategoriaEstabelecimentosActivity" />
+        <activity android:name=".activity.CategoriaEstabelecimentosActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".activity.SelecionarLocalActivity" />
         <activity android:name=".activity.EstabelecimentoInfoActivity" />
         <activity android:name=".teste.TesteActivity" />
@@ -40,7 +41,8 @@
         <activity
             android:name=".MapsTeste.TesteMapsActivity"
             android:label="@string/title_activity_teste_maps" />
-        <activity android:name=".slider.SlideMainActivity">
+        <activity android:name=".slider.SlideMainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
