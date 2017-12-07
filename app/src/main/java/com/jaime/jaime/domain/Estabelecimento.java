@@ -155,8 +155,7 @@ public class Estabelecimento implements Serializable{
      */
     public void setNome(String nome) {
         TextoUtil textoUtil = new TextoUtil();
-
-        this.nome = textoUtil.limitarTamanhoTexto(nome, 20);
+       this.nome = textoUtil.limitarTamanhoTexto(nome, 20);
     }
 
     public String getTelefone() {

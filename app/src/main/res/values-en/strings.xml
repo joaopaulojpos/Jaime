@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jaime</string>
+    <string name="shoppings">MALLS</string>
+    <string name="restaurantes">RESTAURANTS</string>
+    <string name="teatros">THEATERS</string>
+    <string name="praias">BEACHES</string>
+    <string name="finalizar_introducao">Finish Introduction</string>
+    <string name="hint_anotacao">Write down here about this location.</string>
+</resources>
